@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bual2eoavelvk"]
+
+[ext_resource type="Script" path="res://code/world.gd" id="1_cphi6"]
+[ext_resource type="Texture2D" uid="uid://ma7qyba5odkl" path="res://assets/okay/bckgrounnnnd.png" id="2_bnsvm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2332o"]
+sky_top_color = Color(0.543697, 0.682194, 0.719885, 1)
+sky_horizon_color = Color(0.729171, 0.803539, 0.854729, 1)
+ground_bottom_color = Color(0.372988, 0.531961, 0.69903, 1)
+ground_horizon_color = Color(0.729171, 0.803539, 0.854729, 1)
+
+[sub_resource type="Sky" id="Sky_82wvn"]
+sky_material = SubResource("ProceduralSkyMaterial_2332o")
+
+[sub_resource type="Environment" id="Environment_ic4f3"]
+background_energy_multiplier = 0.84
+sky = SubResource("Sky_82wvn")
+ambient_light_color = Color(0.537011, 0.537011, 0.537011, 1)
+ambient_light_energy = 0.68
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k4nl"]
+shading_mode = 0
+albedo_color = Color(0.901422, 0.932878, 0.936616, 1)
+albedo_texture = ExtResource("2_bnsvm")
+texture_filter = 2
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5lpl5"]
+material = SubResource("StandardMaterial3D_8k4nl")
+size = Vector2(650, 400)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_cphi6")
+col = Color(0.427437, 0.755587, 1, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ic4f3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.29404, -0.6956, 0.6555, 0, 0.685818, 0.727773, -0.955793, -0.213994, 0.201658, 0, 0, 0)
+shadow_enabled = true
+
+[node name="BBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -140.25)
+mesh = SubResource("PlaneMesh_5lpl5")
+skeleton = NodePath("../../MeshInstance3D")

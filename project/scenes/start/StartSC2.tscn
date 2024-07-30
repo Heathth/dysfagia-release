@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=3 uid="uid://cct2pi7t5a5us"]
+
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="1_wxdfd"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="2_sueq8"]
+[ext_resource type="Script" path="res://code/ButtonSinglePath.gd" id="3_p8kok"]
+[ext_resource type="Texture2D" uid="uid://shudf2ylkekh" path="res://assets/okay/alku2.png" id="3_urxfr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndopu"]
+albedo_color = Color(0.160784, 0.678431, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8yhe"]
+material = SubResource("StandardMaterial3D_ndopu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jit2f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1m7p"]
+albedo_color = Color(0, 0.58497, 0.887817, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qnltl"]
+material = SubResource("StandardMaterial3D_b1m7p")
+
+[sub_resource type="SystemFont" id="SystemFont_y10d5"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72npt"]
+albedo_texture = ExtResource("3_urxfr")
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ryucp"]
+size = Vector2(16, 14)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cam" parent="." instance=ExtResource("1_wxdfd")]
+boundsx = 10
+boundsy = 10
+
+[node name="World" parent="." instance=ExtResource("2_sueq8")]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Buton" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0883923, -6.88565, 1.48276)
+script = ExtResource("3_p8kok")
+
+[node name="BBack" type="MeshInstance3D" parent="Node3D/Buton"]
+transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_q8yhe")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="Node3D/Buton/BBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Buton/BBack/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_jit2f")
+
+[node name="BBack2" type="MeshInstance3D" parent="Node3D/Buton/BBack"]
+transform = Transform3D(1.03806, 0, 0, 0, 1, 0, 0, 0, 1.0981, 0, -0.0148163, 0)
+mesh = SubResource("PlaneMesh_qnltl")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="ButtonText" type="Label3D" parent="Node3D/Buton"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0.1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Aloita kurssi"
+font = SubResource("SystemFont_y10d5")
+font_size = 150
+outline_size = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.05968, 0.364868)
+material_override = SubResource("StandardMaterial3D_72npt")
+mesh = SubResource("PlaneMesh_ryucp")
+skeleton = NodePath("../..")
+
+[node name="ButtonText" type="Label3D" parent="Node3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0883923, 0.274541, 0.363197)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Olemme sisältäneet prototyyppiin kaksi
+lopullisen työn osiota:
+
+\"Anatomia\" ja \"Nielemisen normaali
+fysiologia\"
+
+Olemme kuitenkin jättäneet kaikki
+valmiin työn sunnitellut otsikot tähän,
+jotta saat paremman kuvan valmiin työn
+sisällöstä.
+
+Kun olet lukenut kaikki osiot läpi, voit siirtyä 
+lopputestiin. Lopputestin ja materiaalin välillä
+voi liikkua vapaasti testin aloittamisen jälkeen.
+
+"
+font = SubResource("SystemFont_y10d5")
+font_size = 130
+outline_size = 0
+
+[node name="BBack2" type="MeshInstance3D" parent="Node3D/MeshInstance3D/ButtonText"]
+transform = Transform3D(6.81682, 0, 0, 0, -4.37114e-08, -1.20582, 0, 1, -5.27082e-08, -0.083725, 3.0958, -0.237253)
+mesh = SubResource("PlaneMesh_qnltl")
+skeleton = NodePath("../..")
+
+[connection signal="input_event" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_mouse_exited"]

@@ -1,0 +1,208 @@
+[gd_scene load_steps=16 format=3 uid="uid://dar5qnh54gx7q"]
+
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="1_xf6x1"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="2_ppvge"]
+[ext_resource type="Texture2D" uid="uid://shudf2ylkekh" path="res://assets/okay/alku2.png" id="3_6xdlf"]
+
+[sub_resource type="GDScript" id="GDScript_vdphs"]
+script/source = "extends Node3D
+
+var outline := false
+@export var path := \"res://MainSC1.tscn\"
+
+func _on_area_3d_mouse_entered():
+
+	var scal = $BBack.scale
+
+	var pos1 = Vector2((1 * scal.x) +.1, (1 * scal.y) +.1)
+	var pos2 = Vector2(-(1 * scal.x) -.1, -(1 * scal.y) -.1)
+	var wid = 0.2
+
+	_box(pos1, pos2, wid)
+	outline = true
+
+
+func _on_area_3d_mouse_exited():
+	if outline == true:
+		outline = false
+		if !$ButtonText.get_child(0) == null:
+			$ButtonText.get_child(0).queue_free()
+
+func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
+			if !%Cam == null:
+				Global.mainzoom = %Cam.get_child(0).position.z
+				Global.campp = Vector2(%Cam.position.x, %Cam.position.y)
+			get_tree().change_scene_to_file(path)
+
+
+
+func _box(pos1:Vector2, pos2:Vector2, width:float) -> MeshInstance3D:
+	
+	var mesh_instance := MeshInstance3D.new()
+	var immediate_mesh := ImmediateMesh.new()
+	var material := ORMMaterial3D.new()
+	
+	var thick = width
+	var subpos1 = 1
+	var subpos2 = 1
+	
+	var point1x = pos1.x
+	var point1y = pos1.y
+	
+	var point2x = pos2.x
+	var point2y = pos2.y
+
+	mesh_instance.mesh = immediate_mesh
+	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+
+	immediate_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES, material)
+
+	immediate_mesh.surface_add_vertex(Vector3(point1x, point1y, 0))
+	immediate_mesh.surface_add_vertex(Vector3((point1x - thick), (point2y + thick), 0))
+	immediate_mesh.surface_add_vertex(Vector3((point1x - thick), (point1y - thick), 0))
+
+	immediate_mesh.surface_add_vertex(Vector3(point1x, point1y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point1x, point2y, 0))
+	immediate_mesh.surface_add_vertex(Vector3((point1x - thick), (point2y + thick), 0))
+
+	immediate_mesh.surface_add_vertex(Vector3((point1x - thick), (point2y + thick), 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x, point2y, 0))
+	immediate_mesh.surface_add_vertex(Vector3((point2x + thick), (point2y + thick), 0))
+
+	immediate_mesh.surface_add_vertex(Vector3((point1x - thick), (point2y + thick), 0))
+	immediate_mesh.surface_add_vertex(Vector3(point1x, point2y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x, point2y, 0))
+
+	immediate_mesh.surface_add_vertex(Vector3(point2x, point2y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x, point1y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x + thick, point1y - thick, 0))
+
+	immediate_mesh.surface_add_vertex(Vector3(point2x, point2y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x + thick, point1y - thick, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x + thick, point2y + thick, 0))
+
+	immediate_mesh.surface_add_vertex(Vector3(point2x, point1y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point1x, point1y, 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x + thick, point1y - thick, 0))
+
+	immediate_mesh.surface_add_vertex(Vector3(point1x, point1y, 0))
+	immediate_mesh.surface_add_vertex(Vector3((point1x - thick), (point1y - thick), 0))
+	immediate_mesh.surface_add_vertex(Vector3(point2x + thick, point1y - thick, 0))
+
+	immediate_mesh.surface_end()
+
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color = Color.WHITE
+
+	$ButtonText.add_child(mesh_instance)
+
+	return mesh_instance
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndopu"]
+albedo_color = Color(0.160784, 0.678431, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8yhe"]
+material = SubResource("StandardMaterial3D_ndopu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jit2f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnvod"]
+albedo_color = Color(0, 0.58497, 0.887817, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qnltl"]
+material = SubResource("StandardMaterial3D_bnvod")
+
+[sub_resource type="SystemFont" id="SystemFont_y10d5"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30ix5"]
+albedo_texture = ExtResource("3_6xdlf")
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j4u3p"]
+size = Vector2(16, 12)
+
+[sub_resource type="SystemFont" id="SystemFont_aqvki"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx60d"]
+albedo_color = Color(0, 0.58497, 0.887817, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6ey0g"]
+material = SubResource("StandardMaterial3D_kx60d")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cam" parent="." instance=ExtResource("1_xf6x1")]
+boundsx = 10
+boundsy = 10
+
+[node name="World" parent="." instance=ExtResource("2_ppvge")]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Buton" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.634, 0.5)
+script = SubResource("GDScript_vdphs")
+path = "res://scenes/MainSC1.tscn"
+
+[node name="BBack" type="MeshInstance3D" parent="Node3D/Buton"]
+transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_q8yhe")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="Node3D/Buton/BBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Buton/BBack/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_jit2f")
+
+[node name="BBack2" type="MeshInstance3D" parent="Node3D/Buton/BBack"]
+transform = Transform3D(1.03806, 0, 0, 0, 1, 0, 0, 0, 1.0981, 0, -0.0148163, 0)
+mesh = SubResource("PlaneMesh_qnltl")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="ButtonText" type="Label3D" parent="Node3D/Buton"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0.1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Paina tästä"
+font = SubResource("SystemFont_y10d5")
+font_size = 150
+outline_size = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.145, -1)
+material_override = SubResource("StandardMaterial3D_30ix5")
+mesh = SubResource("PlaneMesh_j4u3p")
+skeleton = NodePath("../..")
+
+[node name="ButtonText" type="Label3D" parent="Node3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Tervetuloa
+\"Syöttämiseen ja nielemiseen 
+liittyvät haasteet\" 
+verkkokurssin prototyyppiin!
+
+Prototyypin suorittamiseen 
+kuluu noin 10 min, palautteen 
+antamiseen noin 5 min. "
+font = SubResource("SystemFont_aqvki")
+font_size = 150
+outline_size = 0
+
+[node name="BBack3" type="MeshInstance3D" parent="Node3D/MeshInstance3D"]
+transform = Transform3D(-6.24173, 0, 0, 0, 1, 1.42109e-14, 0, 0, 1.65025, 0, 0.5, 2.59136)
+mesh = SubResource("PlaneMesh_6ey0g")
+
+[connection signal="input_event" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_mouse_exited"]

@@ -1,0 +1,189 @@
+[gd_scene load_steps=18 format=3 uid="uid://eu70euisyjyl"]
+
+[ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://colours/backgreen.tres" id="1_kks1e"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="2_winxm"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="3_ojxkm"]
+[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="4_gxyaa"]
+[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="5_dfhug"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="6_tgi3e"]
+[ext_resource type="PackedScene" uid="uid://cwt1e2glh7o2s" path="res://scenes/control/button check2.tscn" id="7_s1vqm"]
+[ext_resource type="PackedScene" uid="uid://cm75vf2gb6gcf" path="res://scenes/control/qz.input.2.tscn" id="8_xk2uk"]
+[ext_resource type="Script" path="res://code/numberpic.gd" id="9_vtqxf"]
+[ext_resource type="PackedScene" uid="uid://4wldp28kucxc" path="res://scenes/control/ABCbutton.tscn" id="10_0g85v"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ivy47"]
+material = ExtResource("1_kks1e")
+size = Vector2(10, 7)
+
+[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
+material = ExtResource("4_gxyaa")
+size = Vector2(20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
+material = ExtResource("5_dfhug")
+size = Vector2(20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pd1xr"]
+size = Vector2(3, 16)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1kl15"]
+
+[sub_resource type="SystemFont" id="SystemFont_gc7up"]
+subpixel_positioning = 0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Center" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.0642, 0, 0, 0, -4.37114e-08, -0.565463, 0, 1, -2.47173e-08, 0, 16.5072, 0.868775)
+mesh = SubResource("PlaneMesh_ivy47")
+skeleton = NodePath("../../..")
+
+[node name="World" parent="." instance=ExtResource("2_winxm")]
+
+[node name="Cam" parent="." instance=ExtResource("3_ojxkm")]
+zoom_min = 25.0
+startzoom = -1.0
+startzoommod = 10.0
+zoom_accel = 0.4
+boundsx = 25
+boundsy = 25
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 10.8875, 16.7526, 1.23119)
+modulate = Color(0.977937, 0.977937, 0.977937, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Kysymys 2 / 2 
+"
+font = SubResource("SystemFont_ulo4s")
+font_size = 400
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Center3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.70925, 0, 0, 0, -4.54773e-08, -2.96696, 0, 1.0404, -1.29691e-07, -0.222701, -9.88769, 0.431102)
+mesh = SubResource("PlaneMesh_xb7f6")
+skeleton = NodePath("../..")
+
+[node name="Center4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.6547, 0, 0, 0, -4.54773e-08, -2.92885, 0, 1.0404, -1.28025e-07, -0.195031, -10.0155, 0.550837)
+mesh = SubResource("PlaneMesh_k6lre")
+skeleton = NodePath("../..")
+
+[node name="SCbutton" parent="." instance=ExtResource("6_tgi3e")]
+transform = Transform3D(1.49062, 0, 0, 0, 1.49062, 0, 0, 0, 1, -20.3695, 16.475, 1.3294)
+
+[node name="checkbutton" parent="." instance=ExtResource("7_s1vqm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.84765, -33.5029, 2.22159)
+
+[node name="quizitems" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0644, 5.65347, 2.8111)
+
+[node name="quizinput" parent="quizitems" instance=ExtResource("8_xk2uk")]
+
+[node name="quizinput2" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.06956, 0)
+index = 1
+
+[node name="quizinput3" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.13911, 0)
+index = 2
+
+[node name="quizinput4" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.398, 0)
+index = 3
+
+[node name="quizinput5" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.5496, 0)
+index = 4
+
+[node name="quizinput6" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.8085, 0)
+index = 5
+
+[node name="quizinput7" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.2566, 0)
+index = 6
+
+[node name="quizinput8" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.7993, 0)
+index = 7
+
+[node name="quizinput9" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, 0, 0)
+index = 8
+
+[node name="quizinput10" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -4.06956, 0)
+index = 9
+
+[node name="quizinput11" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -8.13911, 0)
+index = 10
+
+[node name="quizinput12" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -12.398, 0)
+index = 11
+
+[node name="quizinput13" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -18.5496, 0)
+index = 12
+
+[node name="quizinput14" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -22.8085, 0)
+index = 13
+
+[node name="quizinput15" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -27.2566, 0)
+index = 14
+
+[node name="quizinput16" parent="quizitems" instance=ExtResource("8_xk2uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.512, -31.7993, 0)
+index = 15
+
+[node name="Numberer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3421, 6.70452, 3.28473)
+script = ExtResource("9_vtqxf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Numberer"]
+transform = Transform3D(7.25582, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13.4296, -0.0836024, 4.76837e-07)
+mesh = SubResource("PlaneMesh_pd1xr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Numberer/MeshInstance3D"]
+transform = Transform3D(0.0974537, -1.76448e-09, -0.0974537, 1.81059e-08, 1, 1.42109e-14, 0.707107, -1.28028e-08, 0.707107, 1.49066, 0, 0.939398)
+mesh = SubResource("PlaneMesh_1kl15")
+skeleton = NodePath("../../..")
+
+[node name="Node3D" type="Node3D" parent="Numberer/MeshInstance3D"]
+transform = Transform3D(0.13782, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00203991, 0.118591, -5.96101)
+
+[node name="answer4" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_0g85v")]
+namee = "Oraalinen vaihe | A"
+
+[node name="answer5" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_0g85v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.0844, 0)
+number = 2
+namee = "Faryngeaalinen vaihe | B"
+
+[node name="answer6" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_0g85v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.0584, 0)
+number = 3
+namee = "Esofageaalinen vaihe | C"
+
+[node name="answer7" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_0g85v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8116, 0)
+number = 4
+namee = "Ei kuulu vaiheisiin | -"
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 24.6836, 11.6595, 1.7259)
+modulate = Color(0.342115, 0.348848, 0.392754, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "2. Mihin Nielemisen vaiheeseen lause tai sana liittyy? 
+(jotkut sanat eivät liity mihinkään vaiheista)"
+font = SubResource("SystemFont_gc7up")
+font_size = 250
+outline_size = 0
+horizontal_alignment = 2

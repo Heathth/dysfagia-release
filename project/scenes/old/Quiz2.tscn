@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6w203geq3mfm"]
+
+[ext_resource type="Texture2D" uid="uid://blro0uvx4blpl" path="res://assets/okay/Pallurat nielu.png" id="1_bqgs5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkuj7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.969688, 0.979415, 0.989865, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fbyf"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.536769, 0.798857, 0.934294, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rfck"]
+bg_color = Color(0.635294, 0.835294, 0.941176, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_fbf71"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.385414, 0.40027, 0.403835, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_nkuj7")
+Button/styles/normal = SubResource("StyleBoxFlat_6fbyf")
+Panel/styles/panel = SubResource("StyleBoxFlat_6rfck")
+
+[node name="Quiz" type="Control"]
+layout_mode = 3
+anchor_left = 0.886
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.6721
+offset_top = 326.0
+offset_right = -152.0
+offset_bottom = -322.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_fbf71")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 500)
+layout_direction = 1
+layout_mode = 2
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -353.0
+offset_right = 174.0
+offset_bottom = 346.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(250, 400)
+layout_mode = 2
+offset_left = 40.0
+offset_top = 41.0
+offset_right = 291.0
+offset_bottom = 1022.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Vaihtoehto 1"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Vaihtoehto 1"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Vaihtoehto 1"
+
+[node name="PalluratNielu" type="Sprite2D" parent="Panel"]
+position = Vector2(226, 212)
+scale = Vector2(0.353492, 0.353492)
+texture = ExtResource("1_bqgs5")

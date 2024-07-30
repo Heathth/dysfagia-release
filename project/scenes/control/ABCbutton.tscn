@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://4wldp28kucxc"]
+
+[ext_resource type="Script" path="res://code/numcheck.gd" id="1_ppp86"]
+[ext_resource type="Material" uid="uid://brqdhkqcetnlm" path="res://colours/backgray.tres" id="2_rlnd3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mf10w"]
+material = ExtResource("2_rlnd3")
+size = Vector2(20, 2.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pup"]
+shading_mode = 0
+albedo_color = Color(0.631009, 0.896392, 0.977772, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_07q3e"]
+material = SubResource("StandardMaterial3D_i3pup")
+size = Vector2(20, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80t4m"]
+size = Vector3(20.9404, 3, 3)
+
+[sub_resource type="SystemFont" id="SystemFont_70dhr"]
+subpixel_positioning = 0
+
+[node name="answer" type="Node3D"]
+script = ExtResource("1_ppp86")
+
+[node name="quizimput" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mf10w")
+
+[node name="Highlish" type="MeshInstance3D" parent="quizimput"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14325, 0)
+visible = false
+mesh = SubResource("PlaneMesh_07q3e")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -9.09179, 0, 0)
+
+[node name="Collision shape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97021, 0, 0)
+shape = SubResource("BoxShape3D_80t4m")
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(0.998291, 0, 0, 0, 0.998291, -2.94246e-08, 0, 2.94246e-08, 0.998291, 9.68461, 0.18645, 0.225739)
+modulate = Color(0.114289, 0.125968, 0.152933, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "error"
+font = SubResource("SystemFont_70dhr")
+font_size = 311
+outline_size = 0
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

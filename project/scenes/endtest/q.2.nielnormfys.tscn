@@ -1,0 +1,175 @@
+[gd_scene load_steps=18 format=3 uid="uid://detmdvjyf17uk"]
+
+[ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://colours/backgreen.tres" id="1_heya4"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="2_r4wev"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="3_7j1wb"]
+[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="4_c3xc6"]
+[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="5_mye2q"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="6_styfy"]
+[ext_resource type="PackedScene" uid="uid://cwt1e2glh7o2s" path="res://scenes/control/button check2.tscn" id="7_h8uqx"]
+[ext_resource type="PackedScene" uid="uid://dlos67yjucw3b" path="res://scenes/control/qz.input.3.tscn" id="8_x5wch"]
+[ext_resource type="Script" path="res://code/numberpic.gd" id="9_rgbqi"]
+[ext_resource type="PackedScene" uid="uid://bix8ryww28cnm" path="res://scenes/control/numberbutton.tscn" id="10_ca1cu"]
+
+[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ivy47"]
+material = ExtResource("1_heya4")
+size = Vector2(10, 7)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
+material = ExtResource("5_mye2q")
+size = Vector2(23, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
+material = ExtResource("4_c3xc6")
+size = Vector2(23.5, 10.5)
+
+[sub_resource type="SystemFont" id="SystemFont_gc7up"]
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pd1xr"]
+size = Vector2(3, 14)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1kl15"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="World" parent="." instance=ExtResource("2_r4wev")]
+
+[node name="Cam" parent="." instance=ExtResource("3_7j1wb")]
+zoom_min = 25.0
+startzoom = -1.0
+startzoommod = 10.0
+zoom_accel = 0.4
+boundsx = 25
+boundsy = 25
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 17.9315, 16.3778, 1.23119)
+modulate = Color(0.977937, 0.977937, 0.977937, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Kysymys 2 / 2 
+"
+font = SubResource("SystemFont_ulo4s")
+font_size = 400
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Center" type="MeshInstance3D" parent="Label3D2"]
+transform = Transform3D(6.49677, 0, 0, 0, -1.42364e-08, -0.565463, 0, 1, -8.05028e-09, -18.2365, -0.245399, -0.362415)
+mesh = SubResource("PlaneMesh_ivy47")
+skeleton = NodePath("../../../..")
+
+[node name="SCbutton" parent="Label3D2" instance=ExtResource("6_styfy")]
+transform = Transform3D(1.49062, 0, 0, 0, 1.49062, 2.9475e-08, 0, -4.3936e-08, 1, -45.4367, -0.277599, 0.09821)
+pagenum = 2
+
+[node name="Center4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.98348, 0, 0, 0, -4.54773e-08, -3.84076, 0, 1.0404, -1.67886e-07, 0, 0, 0.551)
+mesh = SubResource("PlaneMesh_k6lre")
+skeleton = NodePath("../..")
+
+[node name="Center3" type="MeshInstance3D" parent="Center4"]
+transform = Transform3D(0.991881, 0, 0, 0, 0.999999, -9.9476e-14, 0, -2.66454e-15, 0.968668, 0, -0.529603, 8.22334e-09)
+mesh = SubResource("PlaneMesh_xb7f6")
+skeleton = NodePath("../../..")
+
+[node name="checkbutton" parent="." instance=ExtResource("7_h8uqx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.4716, -15.0857, 2.22159)
+qnum = 2
+n_p_path = "res://q.3.nielnormfys.tscn"
+
+[node name="quizitems" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1045, 4.65879, 1.56845)
+
+[node name="Label3D4" type="Label3D" parent="quizitems"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -13.8159, 0.0686827, 0.442017)
+modulate = Color(0.195212, 0.199691, 0.229064, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1.
+"
+font = SubResource("SystemFont_gc7up")
+font_size = 350
+outline_size = 0
+horizontal_alignment = 2
+
+[node name="Label3D5" type="Label3D" parent="quizitems"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -13.8159, -6.91602, 0.442017)
+modulate = Color(0.195212, 0.199691, 0.229064, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "2.
+"
+font = SubResource("SystemFont_gc7up")
+font_size = 350
+outline_size = 0
+horizontal_alignment = 2
+
+[node name="Label3D6" type="Label3D" parent="quizitems"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -13.8159, -13.7739, 0.442017)
+modulate = Color(0.195212, 0.199691, 0.229064, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "3.
+"
+font = SubResource("SystemFont_gc7up")
+font_size = 350
+outline_size = 0
+horizontal_alignment = 2
+
+[node name="quizinput" parent="quizitems" instance=ExtResource("8_x5wch")]
+qnum = 2
+
+[node name="quizinput2" parent="quizitems" instance=ExtResource("8_x5wch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
+index = 1
+qnum = 2
+
+[node name="quizinput3" parent="quizitems" instance=ExtResource("8_x5wch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14, 0)
+index = 2
+qnum = 2
+
+[node name="Numberer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3421, 6.70452, 3.28473)
+visible = false
+script = ExtResource("9_rgbqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Numberer"]
+transform = Transform3D(7.25582, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13.4296, -0.0836024, 4.76837e-07)
+mesh = SubResource("PlaneMesh_pd1xr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Numberer/MeshInstance3D"]
+transform = Transform3D(0.0974537, -1.76448e-09, -0.0974537, 1.81059e-08, 1, 1.42109e-14, 0.707107, -1.28028e-08, 0.707107, 1.49066, 0, 0.939398)
+mesh = SubResource("PlaneMesh_1kl15")
+skeleton = NodePath("../../..")
+
+[node name="Node3D" type="Node3D" parent="Numberer/MeshInstance3D"]
+transform = Transform3D(0.13782, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.24739, 0.118591, -3.79099)
+
+[node name="answer" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_ca1cu")]
+namee = "Faryngeaalinen vaihe"
+qnum = 2
+
+[node name="answer2" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_ca1cu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.74666, 0)
+number = 2
+namee = "Esofageaalinen vaihe"
+qnum = 2
+
+[node name="answer3" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_ca1cu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.82391, 0)
+number = 3
+namee = "Oraalinen vaihe"
+qnum = 2
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 30.7952, 10.4906, 1.7259)
+modulate = Color(0.195212, 0.199691, 0.229064, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Aseta nielemisen vaiheet oikeaan järjestykseen
+"
+font = SubResource("SystemFont_gc7up")
+font_size = 250
+outline_size = 0
+horizontal_alignment = 2

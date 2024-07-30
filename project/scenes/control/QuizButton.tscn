@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://csnmkabjddx1w"]
+
+[ext_resource type="Script" path="res://code/Button_test navigation.gd" id="1_nlmb5"]
+[ext_resource type="Material" uid="uid://c1g1llilwiy3m" path="res://colours/kiduhok.tres" id="2_3s3mf"]
+[ext_resource type="Material" uid="uid://vaggfx3q0gvd" path="res://colours/Backblue.tres" id="2_dhcgr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_waerw"]
+material = ExtResource("2_3s3mf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoyae"]
+
+[sub_resource type="SystemFont" id="SystemFont_glf04"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vjpa1"]
+material = ExtResource("2_dhcgr")
+
+[node name="SCbutton" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0, -0.229696)
+script = ExtResource("1_nlmb5")
+
+[node name="BBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.00421, 0, 0, 0, -4.37727e-08, -1.0014, 0, 1.0014, -4.37727e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_waerw")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Area3D" type="Area3D" parent="BBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BBack/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_eoyae")
+
+[node name="ButtonText" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0.0485205)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Lopputestiin
+"
+font = SubResource("SystemFont_glf04")
+font_size = 180
+outline_size = 0
+
+[node name="BBack2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.45105, 0, 0, 0, -4.37114e-08, -2.16198, 0, 1, -9.4503e-08, 0.00137329, 2.38419e-07, -0.0852823)
+mesh = SubResource("PlaneMesh_vjpa1")
+skeleton = NodePath("../../MeshInstance3D")
+
+[connection signal="input_event" from="BBack/Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="BBack/Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="BBack/Area3D" to="." method="_on_area_3d_mouse_exited"]

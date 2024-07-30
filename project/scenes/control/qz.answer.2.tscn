@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyoqfp81fme1d"]
+
+[ext_resource type="Script" path="res://code/numcheck.gd" id="1_68ux5"]
+[ext_resource type="Material" uid="uid://brqdhkqcetnlm" path="res://colours/backgray.tres" id="2_q4vlq"]
+[ext_resource type="Material" uid="uid://c1g1llilwiy3m" path="res://colours/kiduhok.tres" id="3_vpq2g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ke6qd"]
+material = ExtResource("2_q4vlq")
+size = Vector2(25, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pup"]
+shading_mode = 0
+albedo_color = Color(0.631009, 0.896392, 0.977772, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bwa6o"]
+material = SubResource("StandardMaterial3D_i3pup")
+size = Vector2(25, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bi06k"]
+material = ExtResource("3_vpq2g")
+size = Vector2(25, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lual8"]
+size = Vector3(32.8912, 3.83093, 7.23705)
+
+[sub_resource type="SystemFont" id="SystemFont_jy74i"]
+subpixel_positioning = 0
+
+[node name="answer" type="Node3D"]
+script = ExtResource("1_68ux5")
+
+[node name="quizimput" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.29268, 0, 0, 0, -4.37114e-08, -2.22522, 0, 1, -9.72673e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ke6qd")
+
+[node name="Highlish" type="MeshInstance3D" parent="quizimput"]
+transform = Transform3D(1.02077, 0, 0, 0, 1.01223, -3.55271e-14, 0, 0, 0.864174, 0.00683594, 0.0895386, 6.21627e-10)
+visible = false
+mesh = SubResource("PlaneMesh_bwa6o")
+skeleton = NodePath("../..")
+
+[node name="Used" type="MeshInstance3D" parent="quizimput"]
+transform = Transform3D(1.02077, 0, 0, 0, 1.01223, 0, 0, 0, 0.864174, 0.00683594, 0.0569458, 6.21628e-10)
+visible = false
+mesh = SubResource("PlaneMesh_bi06k")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2.45236e-08, 0.561035)
+
+[node name="Collision shape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0539086, 0.415466, -0.0539509)
+shape = SubResource("BoxShape3D_lual8")
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(0.998291, 0, 0, 0, 0.998291, -2.94246e-08, 0, 2.94246e-08, 0.998291, -15.1752, -0.0384948, 0.0973715)
+modulate = Color(0.0864582, 0.0962512, 0.118865, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "="
+font = SubResource("SystemFont_jy74i")
+font_size = 280
+outline_size = 0
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 6500.0
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_2_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

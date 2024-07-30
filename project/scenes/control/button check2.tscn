@@ -1,0 +1,149 @@
+[gd_scene load_steps=15 format=3 uid="uid://cwt1e2glh7o2s"]
+
+[ext_resource type="Script" path="res://code/button check.tres.gd" id="1_6lopu"]
+[ext_resource type="Script" path="res://code/Väärin.gd" id="2_e0pel"]
+[ext_resource type="Script" path="res://code/Jatka.tres.gd" id="2_naqpd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ai603"]
+albedo_color = Color(0.160784, 0.678431, 1, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jh6jn"]
+material = SubResource("StandardMaterial3D_ai603")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoyae"]
+
+[sub_resource type="SystemFont" id="SystemFont_glf04"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdg5f"]
+albedo_color = Color(0, 0.58497, 0.887817, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_le0yu"]
+material = SubResource("StandardMaterial3D_qdg5f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icyrh"]
+shading_mode = 0
+albedo_color = Color(0.421245, 0.710517, 0.556798, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_saoir"]
+material = SubResource("StandardMaterial3D_icyrh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8xcy"]
+size = Vector3(31.6711, 5.85815, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_047da"]
+shading_mode = 0
+albedo_color = Color(0.889777, 0.60785, 0.580334, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v6xc3"]
+material = SubResource("StandardMaterial3D_047da")
+
+[node name="checkbutton" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0, 0)
+script = ExtResource("1_6lopu")
+
+[node name="BBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.96365, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_jh6jn")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Area3D" type="Area3D" parent="BBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BBack/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_eoyae")
+
+[node name="ButtonText" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -9.53674e-07, 0.2)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Tarkista"
+font = SubResource("SystemFont_glf04")
+font_size = 150
+outline_size = 0
+
+[node name="BBack2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.0983, 0, 0, 0, -4.37114e-08, -1.0981, 0, 1, -4.79995e-08, 0.00137329, 2.38419e-07, -0.212839)
+mesh = SubResource("PlaneMesh_le0yu")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Jatka" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1675, 0, 0)
+visible = false
+script = ExtResource("2_naqpd")
+
+[node name="BBack" type="MeshInstance3D" parent="Jatka"]
+transform = Transform3D(2.96365, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_jh6jn")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Area3D" type="Area3D" parent="Jatka/BBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jatka/BBack/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_eoyae")
+
+[node name="ButtonText" type="Label3D" parent="Jatka"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, -9.53674e-07, 0.2)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Jatka >"
+font = SubResource("SystemFont_glf04")
+font_size = 150
+outline_size = 0
+
+[node name="BBack2" type="MeshInstance3D" parent="Jatka"]
+transform = Transform3D(3.0983, 0, 0, 0, -4.37114e-08, -1.0981, 0, 1, -4.79995e-08, 0.00137329, 2.38419e-07, -0.212839)
+mesh = SubResource("PlaneMesh_le0yu")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Oikein" type="MeshInstance3D" parent="Jatka"]
+transform = Transform3D(3.64633, 0, 0, 0, -4.37114e-08, -1.50563, 0, 1, -6.58134e-08, -7.49211, -0.0122004, 0.82079)
+mesh = SubResource("PlaneMesh_saoir")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="ButtonText" type="Label3D" parent="Jatka/Oikein"]
+transform = Transform3D(0.274248, 0, 0, 0, -4.37114e-08, 1, 0, -0.664172, -2.90319e-08, 0, 0.281264, -5.58794e-09)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Oikein"
+font = SubResource("SystemFont_glf04")
+font_size = 300
+outline_size = 0
+
+[node name="Area3D2" type="Area3D" parent="Jatka"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -12.8281, 8.89289, 2.12038)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jatka/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 9.13047e-13, 0, -9.13047e-13, 1, 0.69897, -4.10244, -7.47365)
+shape = SubResource("BoxShape3D_x8xcy")
+
+[node name="Väärin" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85033, 8.89289, 1.25391)
+visible = false
+outline_modulate = Color(0, 0, 0, 0)
+font_size = 500
+script = ExtResource("2_e0pel")
+
+[node name="BBack2" type="MeshInstance3D" parent="Väärin"]
+transform = Transform3D(3.64633, 0, 0, 0, -4.37114e-08, -1.50563, 0, 1, -6.58134e-08, -4.17494, -8.90509, -0.433123)
+mesh = SubResource("PlaneMesh_v6xc3")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="ButtonText" type="Label3D" parent="Väärin/BBack2"]
+transform = Transform3D(0.274248, 0, 0, 0, -4.37114e-08, 1, 0, -0.664172, -2.90319e-08, 0, 0.281264, -6.51926e-09)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Väärin"
+font = SubResource("SystemFont_glf04")
+font_size = 300
+outline_size = 0
+
+[connection signal="input_event" from="BBack/Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="BBack/Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="BBack/Area3D" to="." method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Jatka/BBack/Area3D" to="Jatka" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Jatka/BBack/Area3D" to="Jatka" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Jatka/BBack/Area3D" to="Jatka" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Jatka/Area3D2" to="Väärin" method="_on_area_3d_input_event"]

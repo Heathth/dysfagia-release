@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1g1llilwiy3m"]
+
+[resource]
+shading_mode = 0
+albedo_color = Color(0.343151, 0.45364, 0.606059, 1)
+disable_receive_shadows = true

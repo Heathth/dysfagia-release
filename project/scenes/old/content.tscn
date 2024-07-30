@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://ch62icw7crfj7"]
+
+[ext_resource type="PackedScene" uid="uid://dauv2il11dbpw" path="res://assets/okay/swallow anim 2.dae" id="1_qfnsf"]
+[ext_resource type="Script" path="res://code/border box.gd" id="2_76inl"]
+[ext_resource type="Script" path="res://code/Buton 1.gd" id="3_8kevw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkyok"]
+albedo_color = Color(0.621136, 0.698503, 0.731097, 1)
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_da7t0"]
+
+[sub_resource type="SystemFont" id="SystemFont_x6m8t"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lancy"]
+albedo_color = Color(0.503718, 0.645459, 0.686905, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jh6jn"]
+material = SubResource("StandardMaterial3D_lancy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoyae"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="swallow anim 2" parent="." instance=ExtResource("1_qfnsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56661, -1.61036, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -0.0377068, -0.0366614, -1.39825)
+material_override = SubResource("StandardMaterial3D_wkyok")
+mesh = SubResource("QuadMesh_da7t0")
+
+[node name="border box" type="Node3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -0.320475, 0.217829, -1.39825)
+script = ExtResource("2_76inl")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7815, 6.03982, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Dysfagia
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 500
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4049, 2.85125, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Testisivu
+
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 150
+outline_size = 0
+
+[node name="Buton" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9139, -0.570242, -0.1)
+script = ExtResource("3_8kevw")
+
+[node name="BBack" type="MeshInstance3D" parent="Buton"]
+transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_jh6jn")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Area3D" type="Area3D" parent="Buton/BBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buton/BBack/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_eoyae")
+
+[node name="ButtonText" type="Label3D" parent="Buton"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0.1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Paina tästä"
+font = SubResource("SystemFont_x6m8t")
+font_size = 150
+outline_size = 0
+
+[connection signal="mouse_entered" from="Buton/BBack/Area3D" to="Buton" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Buton/BBack/Area3D" to="Buton" method="_on_area_3d_mouse_exited"]

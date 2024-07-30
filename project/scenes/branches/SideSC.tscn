@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmiw0ops01n3c"]
+
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_v86iy"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_da8cr"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="3_boqnd"]
+
+[sub_resource type="SystemFont" id="SystemFont_x6m8t"]
+font_weight = 425
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6lce"]
+albedo_color = Color(1, 0.413063, 0.376917, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vypxf"]
+material = SubResource("StandardMaterial3D_a6lce")
+
+[node name="SideSC" type="Node3D"]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111675, 4.85812, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Tämä osio on tyhjä
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 500
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Label3D"]
+transform = Transform3D(1.00292, 0, 0, 0, 1.00292, 0, 0, 0, 1.00292, -0.123483, -3.64614, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Tähän osioon tulee sisältöä vasta valmmiissa työssä
+Suoritettavat osiot ovat \"Anatomia\" ja
+ \"Nielemisen Normaali Fysiologia\".
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 150
+outline_size = 0
+
+[node name="World" parent="." instance=ExtResource("1_v86iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398834, -1.52588e-05, 0.620087)
+
+[node name="Cam" parent="." instance=ExtResource("2_da8cr")]
+startzoom = -1.0
+
+[node name="SCbutton" parent="." instance=ExtResource("3_boqnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -3.00214, 0)
+
+[node name="BBack2" type="MeshInstance3D" parent="."]
+transform = Transform3D(13.4303, 0, 0, 0, -4.37114e-08, -4.10689, 0, 1, -1.79517e-07, 0.00137329, 2.80775, -1.41414)
+mesh = SubResource("PlaneMesh_vypxf")
+skeleton = NodePath("../../MeshInstance3D")

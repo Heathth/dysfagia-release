@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://e8w8pqon8thr"]
+
+[ext_resource type="Script" path="res://code/border box.gd" id="1_f762f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="border box" type="Node3D" parent="."]
+script = ExtResource("1_f762f")

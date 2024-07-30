@@ -1,0 +1,177 @@
+[gd_scene load_steps=19 format=3 uid="uid://d16b5eokoii4p"]
+
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_c3d8s"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_eu6f8"]
+[ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://colours/backgreen.tres" id="3_44xlc"]
+[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="5_g1w10"]
+[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="6_bdkwb"]
+[ext_resource type="Texture2D" uid="uid://iqndkj6goeb4" path="res://assets/okay/kysymyspallot.png" id="7_df4i2"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="7_up2ol"]
+[ext_resource type="PackedScene" uid="uid://bcjpe54mu0d2i" path="res://scenes/control/question_field.tscn" id="8_2h2gb"]
+[ext_resource type="Script" path="res://code/numberpic.gd" id="10_6oqg7"]
+[ext_resource type="PackedScene" uid="uid://bix8ryww28cnm" path="res://scenes/control/numberbutton.tscn" id="11_384fh"]
+[ext_resource type="PackedScene" uid="uid://b0qokri8vjqj1" path="res://scenes/control/button check.tscn" id="11_ovgdv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ivy47"]
+material = ExtResource("3_44xlc")
+size = Vector2(10, 7)
+
+[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
+material = ExtResource("5_g1w10")
+size = Vector2(20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
+material = ExtResource("6_bdkwb")
+size = Vector2(20, 20)
+
+[sub_resource type="SystemFont" id="SystemFont_r5p27"]
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pd1xr"]
+size = Vector2(3, 16)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1kl15"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Center" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.0642, 0, 0, 0, -4.37114e-08, -0.565463, 0, 1, -2.47173e-08, 0, 13.3044, 0.868775)
+mesh = SubResource("PlaneMesh_ivy47")
+skeleton = NodePath("../../..")
+
+[node name="World" parent="." instance=ExtResource("1_c3d8s")]
+
+[node name="Cam" parent="." instance=ExtResource("2_eu6f8")]
+zoom_min = 25.0
+startzoom = -1.0
+startzoommod = 10.0
+boundsx = 25
+boundsy = 25
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 10.8875, 13.2185, 1.23119)
+modulate = Color(0.977937, 0.977937, 0.977937, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Kysymys 1 / 2 
+"
+font = SubResource("SystemFont_ulo4s")
+font_size = 400
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Center3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.70925, 0, 0, 0, -4.54773e-08, -1.85405, 0, 1.0404, -8.10434e-08, -0.222701, -2.0325, 0.431102)
+mesh = SubResource("PlaneMesh_xb7f6")
+skeleton = NodePath("../..")
+
+[node name="Center4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.6547, 0, 0, 0, -4.54773e-08, -1.79328, 0, 1.0404, -7.8387e-08, -0.195031, -1.97102, 0.550837)
+mesh = SubResource("PlaneMesh_k6lre")
+skeleton = NodePath("../..")
+
+[node name="SCbutton" parent="." instance=ExtResource("7_up2ol")]
+transform = Transform3D(1.49062, 0, 0, 0, 1.49062, 0, 0, 0, 1, -20.3695, 13.2722, 1.3294)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -9.97971, -3.98115, 1.43556)
+alpha_cut = 1
+alpha_hash_scale = 0.0
+alpha_antialiasing_mode = 1
+texture_filter = 1
+render_priority = 1
+texture = ExtResource("7_df4i2")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38413, -5.02965, 0.917847)
+visible = false
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1. PEHMEÄ SUULAKI 
+2. KURKUNKANSI 
+3. HENKITORVI 
+4. NENÄONTELO 
+5. SUUONTELO 
+6. ÄÄNIHUULET
+"
+font = SubResource("SystemFont_r5p27")
+font_size = 300
+outline_size = 0
+horizontal_alignment = 0
+uppercase = true
+line_spacing = 300.0
+
+[node name="quizitems" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11983, 3.76058, 2.8111)
+
+[node name="quizimput" parent="quizitems" instance=ExtResource("8_2h2gb")]
+
+[node name="quizimput2" parent="quizitems" instance=ExtResource("8_2h2gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.58968, 0)
+index = 1
+
+[node name="quizimput3" parent="quizitems" instance=ExtResource("8_2h2gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.22771, 0)
+index = 2
+
+[node name="quizimput4" parent="quizitems" instance=ExtResource("8_2h2gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.4483, 0)
+index = 3
+
+[node name="quizimput5" parent="quizitems" instance=ExtResource("8_2h2gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.9074, 0)
+index = 4
+
+[node name="quizimput6" parent="quizitems" instance=ExtResource("8_2h2gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.4261, 0)
+index = 5
+
+[node name="Numberer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11983, 3.76058, 3.28473)
+script = ExtResource("10_6oqg7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Numberer"]
+transform = Transform3D(7.25582, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -6.91503, 9.01375, 4.76837e-07)
+mesh = SubResource("PlaneMesh_pd1xr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Numberer/MeshInstance3D"]
+transform = Transform3D(0.0974537, -1.76448e-09, -0.0974537, 1.81059e-08, 1, 1.42109e-14, 0.707107, -1.28028e-08, 0.707107, 0.999891, 2.38419e-07, 7.44753)
+mesh = SubResource("PlaneMesh_1kl15")
+skeleton = NodePath("../../..")
+
+[node name="Node3D" type="Node3D" parent="Numberer/MeshInstance3D"]
+transform = Transform3D(0.13782, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.701877, 0, 0)
+
+[node name="Numberbutton" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("11_384fh")]
+transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, 6.5982, 0.111603)
+namee = "PEHMEÄ SUULAKI "
+
+[node name="Numberbutton2" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("11_384fh")]
+transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, 4.07185, 0.111602)
+number = 2
+namee = "KURKUNKANSI "
+
+[node name="Numberbutton3" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("11_384fh")]
+transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, 1.41252, 0.111602)
+number = 3
+namee = "HENKITORVI "
+
+[node name="Numberbutton4" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("11_384fh")]
+transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, -1.20248, 0.111602)
+number = 4
+namee = "NENÄONTELO "
+
+[node name="Numberbutton5" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("11_384fh")]
+transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, -3.81748, 0.111602)
+number = 5
+namee = "SUUONTELO "
+
+[node name="Numberbutton6" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("11_384fh")]
+transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, -6.4768, 0.111602)
+number = 6
+namee = "KURKUNPÄÄ "
+
+[node name="checkbutton" parent="." instance=ExtResource("11_ovgdv")]
+transform = Transform3D(1.40878, 0, 0, 0, 1.40878, 0, 0, 0, 1, 8.37033, -17.5131, 2)
