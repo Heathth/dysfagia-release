@@ -71,7 +71,7 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_nac0y")
 
 [node name="Center3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18.0793, 8.35051, -0.5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.13454, 39.2494, -0.499999)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_elh2t")
 
