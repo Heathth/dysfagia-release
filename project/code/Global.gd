@@ -19,7 +19,16 @@ var pages := [1, 0, 0]
 
 var quizpage := 0
 
-############################################### Metaarrays
+############################################### COMPLETION
+
+var progres_list := [
+	1, 0, 0,
+	0, 0, 0,
+	0, 0, 0,
+	0
+]
+
+############################################### Meta arrays
 
 @onready var m_answerstate := [
 	"error: incorrectly entered answerstate", 

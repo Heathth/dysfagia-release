@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://de13ro6y0su3a"]
+
+[ext_resource type="Texture2D" uid="uid://bqm3yomaggm5g" path="res://assets/okay/normfys.png" id="1_2twol"]
+[ext_resource type="Material" uid="uid://bqc1isugtyvbd" path="res://colours/backred.tres" id="2_1j50o"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="3_h268t"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="4_vj7v3"]
+[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="5_vy111"]
+[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="6_6mux1"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="7_e422b"]
+
+[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_uded6"]
+
+[sub_resource type="FontVariation" id="FontVariation_a3284"]
+base_font = SubResource("SystemFont_uded6")
+variation_embolden = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lbwxy"]
+material = ExtResource("2_1j50o")
+size = Vector2(10, 7)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
+material = ExtResource("5_vy111")
+size = Vector2(20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
+material = ExtResource("6_6mux1")
+size = Vector2(20, 20)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Textkeep" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6727, 18.1603, 1.07446)
+
+[node name="Label3D3" type="Label3D" parent="Textkeep"]
+alpha_antialiasing_mode = 1
+alpha_antialiasing_edge = 0.71
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Ruoka hienonnetaan suussa hampailla ja se sekoittuu sylkeen muuttuen helpommin nieltäväksi. Kieli ja suun lihakset siirtelevät ruokaa ja muovaavat siitä helposti nieltävän massan eli boluksen. Tämä on tahdonalaista toimintaa. Ruuan siirtäminen suun takaosaan käynnistää nielemisen reflektiivisen vaiheen, kun ruoka koskettaa kielen kantaa ja takanielun seinämää. "
+font = SubResource("SystemFont_ulo4s")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1. Oraalinen vaihe"
+font = SubResource("FontVariation_a3284")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Label3D4" type="Label3D" parent="Textkeep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.4306, 0)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielemisrefleksin aktivoiduttua pureskelu ja hengitys taukoavat. Ruokamassan kulkiessa kohti nielua pehmeä suulaki sulkee nenäportin ja samalla käynnistyy lihassupistusten aalto (peristaltiikka), joka kuljettaa ruokaa eteenpäin nielussa. Äänihuulet sulkeutuvat ja kurkunkansi kääntyy suojaamaan henkitorvea, jolloin ruokamassa ohjautuu ruokatorveen. Suussa käsitelty ruokaa kulkee nielun läpi 0,5–1,5 sekunnissa. "
+font = SubResource("SystemFont_ulo4s")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "2. Faryngeaalinen vaihe"
+font = SubResource("FontVariation_a3284")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Label3D5" type="Label3D" parent="Textkeep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.8127, 0)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Tapahtuu ruokatorvessa, jonka hieman hitaampi peristaltiikka kuljettaa ruokaa kohti mahaporttia. Esofageaalinen vaihe on kestoltaan noin 8-12 sekuntia ja nielemistapahtuma päättyy ruokamassan kulkeuduttua mahalaukkuun.  "
+font = SubResource("SystemFont_ulo4s")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 0)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "3. Esofageaalinen vaihe"
+font = SubResource("FontVariation_a3284")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Sprite3D" type="Sprite3D" parent="Textkeep"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1157, -30.0563, 0.373367)
+texture = ExtResource("1_2twol")
+
+[node name="Label3D2" type="Label3D" parent="Textkeep"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -44.1839, -0.415314, 0.0753744)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielun Anatomia
+"
+font = SubResource("SystemFont_ulo4s")
+font_size = 230
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.31048, 0)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nieleminen on monimutkainen tapahtuma. Se on hienomotorista ja sensorista toimintaa, johon osallistuu useita kasvojen, kielen, kurkunpään ja nielun alueen lihasryhmiä sekä lihaksia. Nieleminen rytmittyy hengityksen kanssa; kun nieleminen käynnistyy, uloshengitys pysähtyy ja käynnistyy jälleen uloshengityksellä. Viisi eri aivohermoa koordinoi nielemistapahtumaa. Nieleminen on osittain tahdonalainen toiminto, osittain refleksi. Nielemisen vaiheet:  "
+font = SubResource("SystemFont_ulo4s")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D2/Label3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
+modulate = Color(0.0808931, 0.197996, 0.287743, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielemisvaikeus eli dysfagia  "
+font = SubResource("FontVariation_a3284")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+line_spacing = 30.0
+autowrap_mode = 3
+width = 5000.0
+
+[node name="Center" type="MeshInstance3D" parent="Textkeep/Label3D2"]
+transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 7.79772, 1.04712, -0.616836)
+mesh = SubResource("PlaneMesh_lbwxy")
+skeleton = NodePath("../../../../..")
+
+[node name="World" parent="." instance=ExtResource("3_h268t")]
+
+[node name="Cam" parent="." instance=ExtResource("4_vj7v3")]
+startzoom = -1.0
+startzoommod = 55.0
+boundsx = 25
+boundsy = 25
+
+[node name="Center4" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.80812, 0, 0, 0, -4.54773e-08, -2.4094, 0, 1.0404, -1.05319e-07, 0, 0, 0)
+mesh = SubResource("PlaneMesh_k6lre")
+skeleton = NodePath("../..")
+
+[node name="Center3" type="MeshInstance3D" parent="Center4"]
+transform = Transform3D(1.02392, 0, 0, 0, 1, -2.84217e-14, 0, -1.77636e-15, 1.03585, 0, -0.649071, 1.77636e-15)
+mesh = SubResource("PlaneMesh_xb7f6")
+skeleton = NodePath("../../..")
+
+[node name="SCbutton" parent="." instance=ExtResource("7_e422b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.322, -21.2524, 1.38499)
+pagenum = 2

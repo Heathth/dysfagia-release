@@ -104,4 +104,5 @@ skeleton = NodePath("../..")
 
 [node name="SCbutton" parent="." instance=ExtResource("7_kpdwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2271, -14.4837, 1.38499)
+path = "res://scenes/MainSC1.tscn"
 pagenum = 1

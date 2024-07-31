@@ -40,6 +40,7 @@ func _ready():
 func _process(delta):
 	move(delta)
 	zoomx(delta)
+	
 
 func move(delta):
 	if Input.is_action_pressed("w"):
