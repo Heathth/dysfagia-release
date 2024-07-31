@@ -1,7 +1,7 @@
 extends Node3D
 
 var outline := false
-@export var path := "res://MainSC1.tscn"
+@export var path := "res://scenes/MainSC1.tscn"
 @export var pagenum = 0
 
 func _on_area_3d_mouse_entered():
