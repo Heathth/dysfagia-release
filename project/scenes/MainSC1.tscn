@@ -1,12 +1,13 @@
-[gd_scene load_steps=51 format=3 uid="uid://bv7r2jfx248je"]
+[gd_scene load_steps=54 format=3 uid="uid://bv7r2jfx248je"]
 
 [ext_resource type="Script" path="res://code/MainSC1.gd" id="1_xjnnx"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_8tkxo"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="3_4yfa4"]
-[ext_resource type="Texture2D" uid="uid://ftipxug8bnhg" path="res://assets/usedd2/Progressline_c.png" id="4_dlson"]
-[ext_resource type="Texture2D" uid="uid://cv0lv0uu8543w" path="res://assets/usedd2/background_C.png" id="5_6ugtx"]
-[ext_resource type="Texture2D" uid="uid://b64vqg0kinqci" path="res://assets/usedd2/backboxes_C.png" id="6_4mwin"]
-[ext_resource type="Texture2D" uid="uid://d2rkdltaxqjsg" path="res://assets/usedd2/branches_c.png" id="7_yffl0"]
+[ext_resource type="Texture2D" uid="uid://dsmsdp23xfx85" path="res://assets/usedd2/Progressline.png" id="4_8y5yg"]
+[ext_resource type="Texture2D" uid="uid://dssu5xlb1w4cv" path="res://assets/usedd2/skeleton.png" id="4_sb4cq"]
+[ext_resource type="Texture2D" uid="uid://rl621bbgg81r" path="res://assets/usedd2/backboxes.png" id="4_sl5f8"]
+[ext_resource type="Texture2D" uid="uid://deudjtw2gujud" path="res://assets/usedd2/background.png" id="5_qvvci"]
+[ext_resource type="Texture2D" uid="uid://crayr07l6vsge" path="res://assets/usedd2/branches.png" id="7_o0i4q"]
 [ext_resource type="Texture2D" uid="uid://b6qopmumh76l6" path="res://assets/usedd2/1.1A.png" id="9_dpbjo"]
 [ext_resource type="Script" path="res://code/new/Slide_Button.gd" id="10_b34or"]
 [ext_resource type="Texture2D" uid="uid://bfqp3puqqetl8" path="res://assets/Bsides/1.1B.png" id="11_qj6c0"]
@@ -24,24 +25,31 @@
 [ext_resource type="Texture2D" uid="uid://ceuh015ubjtlt" path="res://assets/Bsides/2.3B.png" id="23_sejcb"]
 [ext_resource type="Texture2D" uid="uid://pho70b5v1422" path="res://assets/Csides/2.3C.png" id="24_byd4o"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahe65"]
-transparency = 1
-albedo_texture = ExtResource("4_dlson")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_dk55d"]
-material = SubResource("StandardMaterial3D_ahe65")
-size = Vector2(93.72, 58.77)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyuf7"]
-albedo_texture = ExtResource("5_6ugtx")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfi5f"]
+albedo_texture = ExtResource("4_sb4cq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rmck"]
 transparency = 1
-albedo_texture = ExtResource("6_4mwin")
+albedo_texture = ExtResource("4_sl5f8")
 texture_filter = 5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dosdn"]
+material = SubResource("StandardMaterial3D_0rmck")
+size = Vector2(93.72, 58.77)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alviv"]
+albedo_texture = ExtResource("5_qvvci")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jr6af"]
 material = SubResource("StandardMaterial3D_0rmck")
+size = Vector2(93.72, 58.77)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxpho"]
+transparency = 1
+albedo_texture = ExtResource("4_8y5yg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cia8e"]
+material = SubResource("StandardMaterial3D_oxpho")
 size = Vector2(93.72, 58.77)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lfyps"]
@@ -50,7 +58,7 @@ size = Vector2(93.72, 58.77)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jvrj"]
 transparency = 1
-albedo_texture = ExtResource("7_yffl0")
+albedo_texture = ExtResource("7_o0i4q")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_imyom"]
 material = SubResource("StandardMaterial3D_2jvrj")
@@ -131,13 +139,19 @@ boundsy = 30
 [node name="Data" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
-[node name="Progline" type="MeshInstance3D" parent="Data"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0547581, 0)
-mesh = SubResource("PlaneMesh_dk55d")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Data"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232232, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_kfi5f")
+mesh = SubResource("PlaneMesh_dosdn")
 
 [node name="Backplate" type="MeshInstance3D" parent="Data"]
-material_override = SubResource("StandardMaterial3D_xyuf7")
+material_override = SubResource("StandardMaterial3D_alviv")
 mesh = SubResource("PlaneMesh_jr6af")
+
+[node name="Progline" type="MeshInstance3D" parent="Data"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0700865, 0)
+mesh = SubResource("PlaneMesh_cia8e")
 
 [node name="Framesquares" type="MeshInstance3D" parent="Data"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0785027, 0)
