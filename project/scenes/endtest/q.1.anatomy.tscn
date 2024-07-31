@@ -1,12 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://b266d2qci6vgo"]
+[gd_scene load_steps=17 format=3 uid="uid://b266d2qci6vgo"]
 
 [ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://colours/backgreen.tres" id="1_78a4g"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="2_5aris"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="3_6vo7s"]
-[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="4_4trko"]
 [ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="5_5fgid"]
 [ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="6_7crly"]
-[ext_resource type="Texture2D" uid="uid://iqndkj6goeb4" path="res://assets/okay/kysymyspallot.png" id="7_cdf2p"]
+[ext_resource type="Texture2D" uid="uid://b0seeki8ii7wi" path="res://assets/qassets/kysymyspallot.webp" id="7_w748j"]
 [ext_resource type="PackedScene" uid="uid://bcjpe54mu0d2i" path="res://scenes/control/question_field.tscn" id="8_pq1no"]
 [ext_resource type="Script" path="res://code/numberpic.gd" id="9_til6q"]
 [ext_resource type="PackedScene" uid="uid://bix8ryww28cnm" path="res://scenes/control/numberbutton.tscn" id="10_il1j4"]
@@ -18,10 +17,6 @@ size = Vector2(10, 7)
 
 [sub_resource type="SystemFont" id="SystemFont_ulo4s"]
 subpixel_positioning = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
-material = ExtResource("4_4trko")
-size = Vector2(20, 20)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
 material = ExtResource("5_5fgid")
@@ -73,11 +68,6 @@ font_size = 250
 outline_size = 0
 horizontal_alignment = 2
 
-[node name="Center3" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.9009, 0, 0, 0, -4.54773e-08, -1.89979, 0, 1.0404, -8.30426e-08, -0.222701, -2.0325, 0.431102)
-mesh = SubResource("PlaneMesh_xb7f6")
-skeleton = NodePath("../..")
-
 [node name="Center4" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.83887, 0, 0, 0, -4.54773e-08, -1.87077, 0, 1.0404, -8.17744e-08, -0.195031, -1.97102, 0.550837)
 mesh = SubResource("PlaneMesh_k6lre")
@@ -93,7 +83,7 @@ alpha_hash_scale = 0.0
 alpha_antialiasing_mode = 1
 texture_filter = 1
 render_priority = 1
-texture = ExtResource("7_cdf2p")
+texture = ExtResource("7_w748j")
 
 [node name="Label3D3" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38413, -5.02965, 0.917847)
@@ -199,4 +189,4 @@ qnum = 1
 [node name="checkbutton" parent="." instance=ExtResource("11_amsex")]
 transform = Transform3D(1.40878, 0, 0, 0, 1.40878, 0, 0, 0, 1, 8.37033, -17.9106, 2)
 qnum = 1
-n_p_path = "res://q.2.nielnormfys.tscn"
+n_p_path = "res://scenes/endtest/q.2.nielnormfys.tscn"

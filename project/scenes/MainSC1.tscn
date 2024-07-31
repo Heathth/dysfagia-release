@@ -1,25 +1,41 @@
-[gd_scene load_steps=42 format=3 uid="uid://bv7r2jfx248je"]
+[gd_scene load_steps=77 format=3 uid="uid://bv7r2jfx248je"]
 
 [ext_resource type="Script" path="res://code/MainSC1.gd" id="1_xjnnx"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_8tkxo"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="3_4yfa4"]
 [ext_resource type="Texture2D" uid="uid://cul4x87emif7h" path="res://assets/used/Mainfull_c.webp" id="4_3wnl7"]
-[ext_resource type="Texture2D" uid="uid://b6qopmumh76l6" path="res://assets/usedd2/1.1A.png" id="9_dpbjo"]
+[ext_resource type="Texture2D" uid="uid://b6qopmumh76l6" path="res://assets/Asides/1.1A.png" id="9_dpbjo"]
 [ext_resource type="Script" path="res://code/new/Slide_Button.gd" id="10_b34or"]
 [ext_resource type="Texture2D" uid="uid://bfqp3puqqetl8" path="res://assets/Bsides/1.1B.png" id="11_qj6c0"]
 [ext_resource type="Texture2D" uid="uid://cchr6aciovv6r" path="res://assets/Csides/1.1C.png" id="12_bcqs6"]
-[ext_resource type="Texture2D" uid="uid://ora5c4wtlc05" path="res://assets/usedd2/1.2A.png" id="13_7r7ml"]
+[ext_resource type="Texture2D" uid="uid://ora5c4wtlc05" path="res://assets/Asides/1.2A.png" id="13_7r7ml"]
 [ext_resource type="Texture2D" uid="uid://bfcyq0ewmw4rl" path="res://assets/Bsides/1.2B.png" id="13_c0ppe"]
-[ext_resource type="Texture2D" uid="uid://bvssus5m7eh8x" path="res://assets/usedd2/2.1A.png" id="13_pfbsj"]
+[ext_resource type="Texture2D" uid="uid://bvssus5m7eh8x" path="res://assets/Asides/2.1A.png" id="13_pfbsj"]
 [ext_resource type="Texture2D" uid="uid://wvvfr483iwd7" path="res://assets/Bsides/2.1B.png" id="14_3qpfe"]
 [ext_resource type="Texture2D" uid="uid://dqixld28wiq8w" path="res://assets/Csides/2.1C.png" id="15_r6hmc"]
 [ext_resource type="Texture2D" uid="uid://bx01qrrgpw4d2" path="res://assets/Csides/1.2C.jpg" id="18_gqe0b"]
-[ext_resource type="Texture2D" uid="uid://dwoaqfunlb2qc" path="res://assets/usedd2/2.2A.png" id="19_vapjj"]
+[ext_resource type="Texture2D" uid="uid://dwoaqfunlb2qc" path="res://assets/Asides/2.2A.png" id="19_vapjj"]
 [ext_resource type="Texture2D" uid="uid://lu5rn3ru1ins" path="res://assets/Bsides/2.2B.png" id="20_46s5l"]
+[ext_resource type="Texture2D" uid="uid://c1x2gp6tmnkw6" path="res://assets/Asides/3.1A.png" id="21_08lup"]
 [ext_resource type="Texture2D" uid="uid://dafmsysm6a5jm" path="res://assets/Csides/2.2C.png" id="21_o07oa"]
-[ext_resource type="Texture2D" uid="uid://crrccuu136j2v" path="res://assets/usedd2/2.3A.png" id="22_xai3w"]
+[ext_resource type="Texture2D" uid="uid://bfr4x6aff1pia" path="res://assets/Bsides/3.1B.png" id="22_u0g8w"]
+[ext_resource type="Texture2D" uid="uid://crrccuu136j2v" path="res://assets/Asides/2.3A.png" id="22_xai3w"]
+[ext_resource type="Texture2D" uid="uid://bw7h1q1rqvqtb" path="res://assets/Asides/3.2A.png" id="23_d6syd"]
 [ext_resource type="Texture2D" uid="uid://ceuh015ubjtlt" path="res://assets/Bsides/2.3B.png" id="23_sejcb"]
+[ext_resource type="Texture2D" uid="uid://d12twrvqhyxy1" path="res://assets/Csides/3.1C.png" id="23_sne2j"]
 [ext_resource type="Texture2D" uid="uid://pho70b5v1422" path="res://assets/Csides/2.3C.png" id="24_byd4o"]
+[ext_resource type="Texture2D" uid="uid://bhyo4ycw1dxaf" path="res://assets/Bsides/3.2B.png" id="24_vkc5f"]
+[ext_resource type="Texture2D" uid="uid://cn7d2qqrpsqxe" path="res://assets/Csides/3.2C.png" id="26_ysmu0"]
+[ext_resource type="Texture2D" uid="uid://dlgxf6vyxa5hj" path="res://assets/Asides/4A.png" id="27_ng6pm"]
+[ext_resource type="Texture2D" uid="uid://87e8qli46i3p" path="res://assets/Csides/4C.png" id="28_d25ox"]
+[ext_resource type="Texture2D" uid="uid://cjjup5d01r1jd" path="res://assets/Bsides/4B.png" id="29_j2fkv"]
+[ext_resource type="Texture2D" uid="uid://b0gtw4ykltmm1" path="res://assets/Asides/5A.png" id="30_r2b26"]
+[ext_resource type="Texture2D" uid="uid://dag42gltcov3p" path="res://assets/Csides/5C.png" id="31_kqkin"]
+[ext_resource type="Texture2D" uid="uid://cm3sjnh4vyicj" path="res://assets/Bsides/5B.png" id="32_uywwt"]
+[ext_resource type="Texture2D" uid="uid://ijfj58jhcm4n" path="res://assets/Asides/Lopputesti card.png" id="33_figbv"]
+[ext_resource type="Script" path="res://code/new/Slide_Button_end.gd" id="33_mwpl6"]
+[ext_resource type="Texture2D" uid="uid://bopranl7ttsid" path="res://assets/Bsides/Lopputesti card_B.png" id="34_6kpkp"]
+[ext_resource type="Texture2D" uid="uid://deo7gt6y7wok1" path="res://assets/Csides/Lopputesti card_C.png" id="35_s3hbo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jvrj"]
 albedo_texture = ExtResource("4_3wnl7")
@@ -87,6 +103,65 @@ albedo_texture = ExtResource("23_sejcb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mims"]
 albedo_texture = ExtResource("24_byd4o")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb8pk"]
+albedo_texture = ExtResource("21_08lup")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4xey"]
+albedo_texture = ExtResource("22_u0g8w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhvos"]
+albedo_texture = ExtResource("23_sne2j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74j01"]
+albedo_texture = ExtResource("23_d6syd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsvrq"]
+albedo_texture = ExtResource("24_vkc5f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axybc"]
+albedo_texture = ExtResource("26_ysmu0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dytx1"]
+albedo_texture = ExtResource("27_ng6pm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n8b10"]
+material = SubResource("StandardMaterial3D_2jvrj")
+size = Vector2(16.7, 9.88)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ufj1"]
+albedo_texture = ExtResource("28_d25ox")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcgce"]
+albedo_texture = ExtResource("29_j2fkv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhijh"]
+size = Vector3(8.35938, 1, 5.02875)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsywt"]
+albedo_texture = ExtResource("30_r2b26")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01qyf"]
+albedo_texture = ExtResource("31_kqkin")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6e3j"]
+albedo_texture = ExtResource("32_uywwt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0naux"]
+albedo_texture = ExtResource("33_figbv")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b7c86"]
+material = SubResource("StandardMaterial3D_2jvrj")
+size = Vector2(33.52, 4.49)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nlfx"]
+albedo_texture = ExtResource("34_6kpkp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ekae"]
+albedo_texture = ExtResource("35_s3hbo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1tlr"]
+size = Vector3(16.6377, 1, 2.22217)
+
 [node name="MainSC" type="Node3D"]
 script = ExtResource("1_xjnnx")
 
@@ -95,7 +170,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42973, -1.21701, 0)
 zoom_max = 40.0
 zoom_min = 10.0
-startzoommod = 40.0
 boundsy = 30
 
 [node name="World" parent="." instance=ExtResource("3_4yfa4")]
@@ -276,6 +350,173 @@ skeleton = NodePath("../..")
 transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0.0709839, -5.96046e-08, -0.0314331)
 shape = SubResource("BoxShape3D_eum18")
 
+[node name="3_1" type="MeshInstance3D" parent="Data/Slidesroot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6289, 0.161036, 19.2556)
+cast_shadow = 0
+script = ExtResource("10_b34or")
+path = "res://scenes/branches/1.2.tscn"
+secnum = 5
+
+[node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_1"]
+material_override = SubResource("StandardMaterial3D_eb8pk")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hluyy")
+skeleton = NodePath("../..")
+
+[node name="B" type="MeshInstance3D" parent="Data/Slidesroot/3_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.78678, 0)
+material_override = SubResource("StandardMaterial3D_h4xey")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hluyy")
+skeleton = NodePath("../..")
+
+[node name="C" type="MeshInstance3D" parent="Data/Slidesroot/3_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.7653, 0)
+material_override = SubResource("StandardMaterial3D_lhvos")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hluyy")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Data/Slidesroot/3_1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Data/Slidesroot/3_1/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0.0709839, -5.96046e-08, -0.0314331)
+shape = SubResource("BoxShape3D_eum18")
+
+[node name="3_2" type="MeshInstance3D" parent="Data/Slidesroot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9345, 0.161036, 19.2398)
+cast_shadow = 0
+script = ExtResource("10_b34or")
+path = "res://scenes/branches/1.2.tscn"
+secnum = 6
+
+[node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_2"]
+material_override = SubResource("StandardMaterial3D_74j01")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hluyy")
+skeleton = NodePath("../..")
+
+[node name="B" type="MeshInstance3D" parent="Data/Slidesroot/3_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.78678, 0)
+material_override = SubResource("StandardMaterial3D_tsvrq")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hluyy")
+skeleton = NodePath("../..")
+
+[node name="C" type="MeshInstance3D" parent="Data/Slidesroot/3_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.7653, 0)
+material_override = SubResource("StandardMaterial3D_axybc")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hluyy")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Data/Slidesroot/3_2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Data/Slidesroot/3_2/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0.0709839, -5.96046e-08, -0.0314331)
+shape = SubResource("BoxShape3D_eum18")
+
+[node name="3_3" type="MeshInstance3D" parent="Data/Slidesroot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81929, 0.161036, 19.9597)
+cast_shadow = 0
+script = ExtResource("10_b34or")
+path = "res://scenes/branches/1.2.tscn"
+secnum = 7
+
+[node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_3"]
+material_override = SubResource("StandardMaterial3D_dytx1")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_n8b10")
+skeleton = NodePath("../..")
+
+[node name="C" type="MeshInstance3D" parent="Data/Slidesroot/3_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.8956, 0.871677)
+material_override = SubResource("StandardMaterial3D_8ufj1")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_n8b10")
+skeleton = NodePath("../..")
+
+[node name="B" type="MeshInstance3D" parent="Data/Slidesroot/3_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.1864, 0.871677)
+material_override = SubResource("StandardMaterial3D_wcgce")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_n8b10")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Data/Slidesroot/3_3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Data/Slidesroot/3_3/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0.0709839, -5.96046e-08, 0.98657)
+shape = SubResource("BoxShape3D_qhijh")
+
+[node name="3_4" type="MeshInstance3D" parent="Data/Slidesroot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6122, 0.161036, 19.9597)
+cast_shadow = 0
+script = ExtResource("10_b34or")
+path = "res://scenes/branches/1.2.tscn"
+secnum = 8
+
+[node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_4"]
+material_override = SubResource("StandardMaterial3D_nsywt")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_n8b10")
+skeleton = NodePath("../..")
+
+[node name="C" type="MeshInstance3D" parent="Data/Slidesroot/3_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.8956, 0.871677)
+material_override = SubResource("StandardMaterial3D_01qyf")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_n8b10")
+skeleton = NodePath("../..")
+
+[node name="B" type="MeshInstance3D" parent="Data/Slidesroot/3_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.1864, 0.871677)
+material_override = SubResource("StandardMaterial3D_c6e3j")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_n8b10")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Data/Slidesroot/3_4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Data/Slidesroot/3_4/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 0.0709839, -5.96046e-08, 0.98657)
+shape = SubResource("BoxShape3D_qhijh")
+
+[node name="Loptest" type="MeshInstance3D" parent="Data/Slidesroot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50321, 0.161036, 1.88103)
+cast_shadow = 0
+script = ExtResource("33_mwpl6")
+path1 = "res://scenes/endtest/q.1.anatomy.tscn"
+path2 = "res://scenes/endtest/q.2.nielnormfys.tscn"
+path3 = "res://scenes/endtest/q.3.nielnormfys.tscn"
+secnum = 9
+
+[node name="A" type="MeshInstance3D" parent="Data/Slidesroot/Loptest"]
+material_override = SubResource("StandardMaterial3D_0naux")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_b7c86")
+skeleton = NodePath("../..")
+
+[node name="B" type="MeshInstance3D" parent="Data/Slidesroot/Loptest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.2634, 0)
+material_override = SubResource("StandardMaterial3D_1nlfx")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_b7c86")
+skeleton = NodePath("../..")
+
+[node name="C" type="MeshInstance3D" parent="Data/Slidesroot/Loptest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.9483, 0)
+material_override = SubResource("StandardMaterial3D_2ekae")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_b7c86")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Data/Slidesroot/Loptest"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Data/Slidesroot/Loptest/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 5.18696e-13, 0, -5.18696e-13, 2, 1.01727, -8.9407e-08, 0.782957)
+shape = SubResource("BoxShape3D_w1tlr")
+
 [connection signal="input_event" from="Data/Slidesroot/1_1/Area3D" to="Data/Slidesroot/1_1" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Data/Slidesroot/1_1/Area3D" to="Data/Slidesroot/1_1" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Data/Slidesroot/1_1/Area3D" to="Data/Slidesroot/1_1" method="_on_area_3d_mouse_exited"]
@@ -291,3 +532,18 @@ shape = SubResource("BoxShape3D_eum18")
 [connection signal="input_event" from="Data/Slidesroot/2_3/Area3D" to="Data/Slidesroot/2_3" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Data/Slidesroot/2_3/Area3D" to="Data/Slidesroot/2_3" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Data/Slidesroot/2_3/Area3D" to="Data/Slidesroot/2_3" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Data/Slidesroot/3_1/Area3D" to="Data/Slidesroot/3_1" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Data/Slidesroot/3_1/Area3D" to="Data/Slidesroot/3_1" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Data/Slidesroot/3_1/Area3D" to="Data/Slidesroot/3_1" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Data/Slidesroot/3_2/Area3D" to="Data/Slidesroot/3_2" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Data/Slidesroot/3_2/Area3D" to="Data/Slidesroot/3_2" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Data/Slidesroot/3_2/Area3D" to="Data/Slidesroot/3_2" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Data/Slidesroot/3_3/Area3D" to="Data/Slidesroot/3_3" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Data/Slidesroot/3_3/Area3D" to="Data/Slidesroot/3_3" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Data/Slidesroot/3_3/Area3D" to="Data/Slidesroot/3_3" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Data/Slidesroot/3_4/Area3D" to="Data/Slidesroot/3_4" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Data/Slidesroot/3_4/Area3D" to="Data/Slidesroot/3_4" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Data/Slidesroot/3_4/Area3D" to="Data/Slidesroot/3_4" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Data/Slidesroot/Loptest/Area3D" to="Data/Slidesroot/Loptest" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Data/Slidesroot/Loptest/Area3D" to="Data/Slidesroot/Loptest" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Data/Slidesroot/Loptest/Area3D" to="Data/Slidesroot/Loptest" method="_on_area_3d_mouse_exited"]

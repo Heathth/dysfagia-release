@@ -14,8 +14,6 @@ func _on_area_3d_mouse_entered():
 	_box(pos1, pos2, wid)
 	outline = true
 
-
-
 func _on_area_3d_mouse_exited():
 	if outline == true:
 		outline = false

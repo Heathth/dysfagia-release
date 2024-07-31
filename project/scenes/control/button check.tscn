@@ -75,7 +75,6 @@ skeleton = NodePath("../../MeshInstance3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1675, 0, 0)
 visible = false
 script = ExtResource("2_1q2b3")
-path = "res://quizpage2.tscn"
 
 [node name="BBack" type="MeshInstance3D" parent="Jatka"]
 transform = Transform3D(2.96365, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)

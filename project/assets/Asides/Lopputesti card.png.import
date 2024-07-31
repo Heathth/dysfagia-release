@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhyo4ycw1dxaf"
-path.s3tc="res://.godot/imported/3.2B.png-5f08427bed2f0c5522213e3602f27e24.s3tc.ctex"
+uid="uid://ijfj58jhcm4n"
+path.s3tc="res://.godot/imported/Lopputesti card.png-0eb5cdffc6003894d565588a4887ab71.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Bsides/3.2B.png"
-dest_files=["res://.godot/imported/3.2B.png-5f08427bed2f0c5522213e3602f27e24.s3tc.ctex"]
+source_file="res://assets/Asides/Lopputesti card.png"
+dest_files=["res://.godot/imported/Lopputesti card.png-0eb5cdffc6003894d565588a4887ab71.s3tc.ctex"]
 
 [params]
 

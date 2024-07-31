@@ -4,6 +4,13 @@ var outline := false
 @export var qnum := 0
 @export var n_p_path = "path"
 
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_O:
+			if Input.is_action_pressed("u"):
+				Global.m_q[qnum] = true
+				get_tree().change_scene_to_file(n_p_path)
+
 func _on_area_3d_mouse_entered():
 
 	var scal = $BBack.scale
@@ -14,8 +21,6 @@ func _on_area_3d_mouse_entered():
 
 	_box(pos1, pos2, wid)
 	outline = true
-
-
 
 func _on_area_3d_mouse_exited():
 	if outline == true:
@@ -32,7 +37,8 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 					correct = false
 			if correct == true:
 				print("correct")
-				Global.quizpage = qnum
+				Global.m_q[qnum] = true
+				print(Global.m_q)
 				$Jatka.show()
 			else:
 				print("wrong")

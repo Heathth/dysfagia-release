@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddx66eanl7vc0"]
+
+[ext_resource type="Script" path="res://Errskip.gd" id="1_1qow7"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_e84nr"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_ioe43"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8tnlg"]
+size = Vector2(30, 3)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.861572)
+text = "ERROR: 704 (HTML5 version)"
+font_size = 400
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8tnlg")
+script = ExtResource("1_1qow7")
+
+[node name="World" parent="." instance=ExtResource("1_e84nr")]
+
+[node name="Cam" parent="." instance=ExtResource("2_ioe43")]
+zoom_max = 12.0
+zoom_min = 12.0
+boundsx = 0
+boundsy = 0
