@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deudjtw2gujud"
-path.s3tc="res://.godot/imported/background.png-e38801da2f7f1e56dc9c2b27e7b7df2c.s3tc.ctex"
+uid="uid://b64vqg0kinqci"
+path.s3tc="res://.godot/imported/backboxes_C.png-025d2993b94f68c023411259c6145f47.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/usedd2/background.png"
-dest_files=["res://.godot/imported/background.png-e38801da2f7f1e56dc9c2b27e7b7df2c.s3tc.ctex"]
+source_file="res://assets/usedd2/backboxes_C.png"
+dest_files=["res://.godot/imported/backboxes_C.png-025d2993b94f68c023411259c6145f47.s3tc.ctex"]
 
 [params]
 
