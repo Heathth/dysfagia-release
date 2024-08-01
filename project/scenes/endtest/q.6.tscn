@@ -70,10 +70,10 @@ n_p_path = "res://scenes/endtest/q.7.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 0, 4.6054, 1.35101)
 
 [node name="Label3D4" type="Label3D" parent="Qanchor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69529, 11.4174, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6067, 11.4174, 0)
 modulate = Color(0.0576286, 0.0596832, 0.0731857, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nielemisvaikeudesta kertovia oireita voivat olla: 
+text = "Mitkä ovat onnistuneen ruokailun kulmakivet dysfagiahenkilön ruokailussa? 
 
 "
 font = SubResource("SystemFont_gc7up")
