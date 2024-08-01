@@ -69,10 +69,10 @@ n_p_path = "res://scenes/endtest/q.12.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 0, 4.6054, 1.35101)
 
 [node name="Label3D4" type="Label3D" parent="Qanchor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8961, 10.9878, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7644, 10.9878, 0)
 modulate = Color(0.0576286, 0.0596832, 0.0731857, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Valitse oikat väittämät ikääntymisen vaikutuksista nielemiseen:
+text = "Valitse oikeat väittämät ikääntymisen vaikutuksista nielemiseen:
 
 "
 font = SubResource("SystemFont_gc7up")
