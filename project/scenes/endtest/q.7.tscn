@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://bykymjoe1q8gd"]
+
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_cerop"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_luy1u"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="3_qnc5m"]
+[ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://colours/backgreen.tres" id="4_ou3ri"]
+[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="5_8fipx"]
+[ext_resource type="PackedScene" uid="uid://cwt1e2glh7o2s" path="res://scenes/control/button check2.tscn" id="6_m65fm"]
+[ext_resource type="PackedScene" uid="uid://dybphqb8x3c08" path="res://scenes/control/new/select x type.tscn" id="7_6r1f6"]
+[ext_resource type="Script" path="res://code/new/button_check_sel_x_type.tres.gd" id="7_c3tb0"]
+
+[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
+subpixel_positioning = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cp6c7"]
+material = ExtResource("4_ou3ri")
+size = Vector2(10, 7)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
+material = ExtResource("5_8fipx")
+size = Vector2(23, 8)
+
+[sub_resource type="SystemFont" id="SystemFont_gc7up"]
+subpixel_positioning = 0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="World" parent="." instance=ExtResource("1_cerop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9571, 0, 0)
+
+[node name="Cam" parent="." instance=ExtResource("2_luy1u")]
+zoom_min = 25.0
+startzoom = -1.0
+zoom_accel = 0.4
+boundsx = 25
+boundsy = 25
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 17.9315, 11.6443, 1.23119)
+modulate = Color(0.977937, 0.977937, 0.977937, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Kysymys 6 / 11
+"
+font = SubResource("SystemFont_ulo4s")
+font_size = 400
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="SCbutton" parent="Label3D2" instance=ExtResource("3_qnc5m")]
+transform = Transform3D(1.49062, 0, 0, 0, 1.49062, 2.9475e-08, 0, -4.3936e-08, 1, -45.4367, -0.277599, 0.09821)
+
+[node name="Center2" type="MeshInstance3D" parent="Label3D2"]
+transform = Transform3D(6.49677, 0, 0, 0, -1.42364e-08, -0.565463, 0, 1, -8.05028e-09, -18.2365, -0.245399, -0.362415)
+mesh = SubResource("PlaneMesh_cp6c7")
+skeleton = NodePath("../../../..")
+
+[node name="Center4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.98348, 0, 0, 0, -4.54773e-08, -4.56089, 0, 1.0404, -1.99364e-07, 0, -2.8379, 0.551)
+mesh = SubResource("PlaneMesh_k6lre")
+skeleton = NodePath("../..")
+
+[node name="checkbutton" parent="." instance=ExtResource("6_m65fm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.4716, -16.9256, 2.22159)
+script = ExtResource("7_c3tb0")
+qnum = 7
+n_p_path = "res://scenes/endtest/q.8.tscn"
+
+[node name="Qanchor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 0, -5.26846, 1.35101)
+
+[node name="Label3D4" type="Label3D" parent="Qanchor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98644, 10.6898, 1.19209e-07)
+modulate = Color(0.0576286, 0.0596832, 0.0731857, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Valitse oikeat toimenpiteet ruokailun jälkeen? 
+
+"
+font = SubResource("SystemFont_gc7up")
+font_size = 250
+outline_size = 0
+horizontal_alignment = 2
+
+[node name="Field" parent="Qanchor" instance=ExtResource("7_6r1f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7474, 4.81041, 0)
+index = 1
+qnum = 7
+
+[node name="Field2" parent="Qanchor" instance=ExtResource("7_6r1f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7474, -3.9196, 0)
+index = 2
+qnum = 7
+
+[node name="Field4" parent="Qanchor" instance=ExtResource("7_6r1f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3709, 4.81041, 0)
+index = 3
+qnum = 7
+
+[node name="Field5" parent="Qanchor" instance=ExtResource("7_6r1f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4917, -3.91966, 0.0112305)
+index = 4
+qnum = 7

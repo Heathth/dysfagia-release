@@ -167,9 +167,9 @@ script = ExtResource("1_xjnnx")
 
 [node name="Cam" parent="." instance=ExtResource("2_8tkxo")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42973, -1.21701, 0)
 zoom_max = 40.0
 zoom_min = 10.0
+startzoommod = 70.0
 boundsy = 30
 
 [node name="World" parent="." instance=ExtResource("3_4yfa4")]
@@ -178,11 +178,9 @@ boundsy = 30
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="Branches" type="MeshInstance3D" parent="Data"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0785027, 0)
 mesh = SubResource("PlaneMesh_imyom")
 
 [node name="Slidesroot" type="Node3D" parent="Data"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0785027, 0)
 
 [node name="1_1" type="MeshInstance3D" parent="Data/Slidesroot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1201, 0.161036, -12.7644)
@@ -221,7 +219,7 @@ shape = SubResource("BoxShape3D_nwttg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29444, 0.161036, -12.7644)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.1.tscn"
+path = "res://ERR.tscn"
 secnum = 2
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/2_1"]
@@ -287,7 +285,7 @@ shape = SubResource("BoxShape3D_eum18")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9304, 0.161036, -15.1092)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.2.tscn"
+path = "res://ERR.tscn"
 secnum = 3
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/2_2"]
@@ -321,7 +319,7 @@ shape = SubResource("BoxShape3D_eum18")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7216, 0.161036, -15.1092)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.2.tscn"
+path = "res://ERR.tscn"
 secnum = 4
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/2_3"]
@@ -354,7 +352,7 @@ shape = SubResource("BoxShape3D_eum18")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6289, 0.161036, 19.2556)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.2.tscn"
+path = "res://ERR.tscn"
 secnum = 5
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_1"]
@@ -387,7 +385,7 @@ shape = SubResource("BoxShape3D_eum18")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9345, 0.161036, 19.2398)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.2.tscn"
+path = "res://ERR.tscn"
 secnum = 6
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_2"]
@@ -420,7 +418,7 @@ shape = SubResource("BoxShape3D_eum18")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81929, 0.161036, 19.9597)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.2.tscn"
+path = "res://ERR.tscn"
 secnum = 7
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_3"]
@@ -453,7 +451,7 @@ shape = SubResource("BoxShape3D_qhijh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6122, 0.161036, 19.9597)
 cast_shadow = 0
 script = ExtResource("10_b34or")
-path = "res://scenes/branches/1.2.tscn"
+path = "res://ERR.tscn"
 secnum = 8
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/3_4"]
@@ -489,6 +487,11 @@ script = ExtResource("33_mwpl6")
 path1 = "res://scenes/endtest/q.1.anatomy.tscn"
 path2 = "res://scenes/endtest/q.2.nielnormfys.tscn"
 path3 = "res://scenes/endtest/q.3.nielnormfys.tscn"
+path4 = "res://scenes/endtest/q.4.tscn"
+path5 = "res://scenes/endtest/q.5.tscn"
+path6 = "res://scenes/endtest/q.6.tscn"
+path7 = "res://scenes/endtest/q.7.tscn"
+path8 = "res://scenes/endtest/q.8.tscn"
 secnum = 9
 
 [node name="A" type="MeshInstance3D" parent="Data/Slidesroot/Loptest"]

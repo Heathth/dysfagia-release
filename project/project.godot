@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dysfagia Release"
-run/main_scene="res://ERR.tscn"
+run/main_scene="res://scenes/start/StartSC0.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
 [autoload]

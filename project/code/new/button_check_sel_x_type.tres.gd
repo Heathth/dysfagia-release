@@ -1,14 +1,19 @@
 extends Node3D
 
 var outline := false
-@export var path1 := "path"
-@export var path2 := "path"
-@export var path3 := "path"
+@export var qnum := 0
+@export var n_p_path = "path"
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_O:
+			if Input.is_action_pressed("u"):
+				Global.m_q[qnum] = true
+				get_tree().change_scene_to_file(n_p_path)
 
 func _on_area_3d_mouse_entered():
 
 	var scal = $BBack.scale
-	print(scal)
 
 	var pos1 = Vector2((1 * scal.x) +.1, (1 * scal.y) +.1)
 	var pos2 = Vector2(-(1 * scal.x) -.1, -(1 * scal.y) -.1)
@@ -16,7 +21,6 @@ func _on_area_3d_mouse_entered():
 
 	_box(pos1, pos2, wid)
 	outline = true
-
 
 func _on_area_3d_mouse_exited():
 	if outline == true:
@@ -27,7 +31,22 @@ func _on_area_3d_mouse_exited():
 func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
-			get_tree().change_scene_to_file("res://scenes/MainSC1.tscn")
+			var correct = true
+			for n in Global.m_answerstate[qnum].size():
+				if not Global.m_answerstate[qnum][n] == Global.m_answersq[qnum][n]:
+					correct = false
+			if correct == true:
+				print("correct")
+				Global.m_q[qnum] = true
+				print(Global.m_q)
+				$Jatka.show()
+			else:
+				print("wrong")
+				print(Global.m_answerstate[qnum])
+				$"Väärin".show()
+				await get_tree().create_timer(0.6).timeout
+				$"Väärin".hide()
+
 
 func _box(pos1:Vector2, pos2:Vector2, width:float) -> MeshInstance3D:
 	

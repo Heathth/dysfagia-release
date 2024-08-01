@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6s0dsvugnqb7"]
+[gd_scene load_steps=18 format=3 uid="uid://b6s0dsvugnqb7"]
 
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_5monw"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_vl1sw"]
 [ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://colours/backgreen.tres" id="3_t8fd3"]
 [ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="4_0jcll"]
 [ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="5_y83rb"]
-[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="6_ssygq"]
 [ext_resource type="PackedScene" uid="uid://cwt1e2glh7o2s" path="res://scenes/control/button check2.tscn" id="7_2icd2"]
 [ext_resource type="PackedScene" uid="uid://cm75vf2gb6gcf" path="res://scenes/control/qz.input.2.tscn" id="9_hcqxn"]
 [ext_resource type="PackedScene" uid="uid://cyoqfp81fme1d" path="res://scenes/control/qz.answer.2.tscn" id="10_lpsbn"]
@@ -25,10 +24,6 @@ size = Vector2(10, 7)
 [sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
 material = ExtResource("5_y83rb")
 size = Vector2(23, 10)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
-material = ExtResource("6_ssygq")
-size = Vector2(23.5, 10.5)
 
 [sub_resource type="SystemFont" id="SystemFont_gc7up"]
 subpixel_positioning = 0
@@ -57,7 +52,7 @@ boundsy = 25
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 17.9315, 16.3778, 1.23119)
 modulate = Color(0.977937, 0.977937, 0.977937, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Kysymys 2 / 2 
+text = "Kysymys 2 / 11
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 400
@@ -82,15 +77,10 @@ transform = Transform3D(2.98348, 0, 0, 0, -4.54773e-08, -4.56089, 0, 1.0404, -1.
 mesh = SubResource("PlaneMesh_k6lre")
 skeleton = NodePath("../..")
 
-[node name="Center3" type="MeshInstance3D" parent="Center4"]
-transform = Transform3D(0.991881, 0, 0, 0, 0.999999, -9.9476e-14, 0, -2.66454e-15, 0.968668, 0, -0.529603, 8.22334e-09)
-mesh = SubResource("PlaneMesh_xb7f6")
-skeleton = NodePath("../../..")
-
 [node name="checkbutton" parent="." instance=ExtResource("7_2icd2")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.4716, -21.4164, 2.22159)
 qnum = 3
-n_p_path = "res://EndSC.tscn"
+n_p_path = "res://scenes/endtest/q.4.tscn"
 
 [node name="quizitems" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1045, 4.65879, 1.56845)

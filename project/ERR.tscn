@@ -1,21 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddx66eanl7vc0"]
+[gd_scene load_steps=6 format=3 uid="uid://ddx66eanl7vc0"]
 
 [ext_resource type="Script" path="res://Errskip.gd" id="1_1qow7"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_e84nr"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_ioe43"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ruxg"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_8tnlg"]
-size = Vector2(30, 3)
+material = SubResource("StandardMaterial3D_5ruxg")
+size = Vector2(90, 70)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.861572)
-text = "ERROR: 704 (HTML5 version)"
+transform = Transform3D(0.509379, 0, 0, 0, 0.509379, 0, 0, 0, 1, 0, 0, 0.861572)
+text = "Cache Error : 51"
 font_size = 400
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.196609, 0, 0)
 mesh = SubResource("PlaneMesh_8tnlg")
 script = ExtResource("1_1qow7")
 

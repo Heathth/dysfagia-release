@@ -45,7 +45,7 @@ boundsy = 25
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 17.9315, 16.3778, 1.23119)
 modulate = Color(0.977937, 0.977937, 0.977937, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Kysymys 2 / 2 
+text = "Kysymys 2 / 11
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 400
@@ -154,10 +154,10 @@ namee = "Oraalinen vaihe"
 qnum = 2
 
 [node name="Label3D4" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -4.72786, 10.4906, 1.7259)
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 8.46643, 10.4906, 1.7259)
 modulate = Color(0.195212, 0.199691, 0.229064, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Mitkä ovat syljen tehtävät ruokailussa? 
+text = "Aseta nielemisen vaiheeiden kuvaukset oikeaan järjestykseen
 "
 font = SubResource("SystemFont_gc7up")
 font_size = 250

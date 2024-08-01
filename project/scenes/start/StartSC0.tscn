@@ -150,9 +150,9 @@ boundsy = 10
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Buton" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.634, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.634, -0.638713)
 script = SubResource("GDScript_vdphs")
-path = "res://scenes/MainSC1.tscn"
+path = "res://scenes/start/StartSC01.tscn"
 
 [node name="BBack" type="MeshInstance3D" parent="Node3D/Buton"]
 transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
@@ -190,11 +190,11 @@ outline_modulate = Color(0, 0, 0, 0)
 text = "Tervetuloa
 \"Syöttämiseen ja nielemiseen 
 liittyvät haasteet\" 
-verkkokurssin prototyyppiin!
+verkkokurssin!
 
-Prototyypin suorittamiseen 
-kuluu noin 10 min, palautteen 
-antamiseen noin 5 min. "
+Verkkokurssin 
+suorittamiseen kuluu noin 
+40 min"
 font = SubResource("SystemFont_aqvki")
 font_size = 150
 outline_size = 0

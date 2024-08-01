@@ -14,7 +14,7 @@ var movedamp := 0.87
 var zoom := 0.0
 
 @export var startzoom := 1.0
-@export var startzoommod := 0.0
+@export var startzoommod := 20.0
 
 var zoom_keeper := 0.0
 var zoom_speed := 0.7

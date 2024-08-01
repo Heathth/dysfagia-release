@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw7biuj7i23n5"]
+[gd_scene load_steps=13 format=3 uid="uid://cw7biuj7i23n5"]
 
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="1_pvdah"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="2_fa6qd"]
-[ext_resource type="Texture2D" uid="uid://shudf2ylkekh" path="res://assets/okay/alku2.png" id="3_l8q40"]
+[ext_resource type="Texture2D" uid="uid://dsw0rfiaqo2cx" path="res://assets/okay/alku.png" id="3_7yk3o"]
 
 [sub_resource type="GDScript" id="GDScript_vdphs"]
 script/source = "extends Node3D
@@ -120,16 +120,11 @@ material = SubResource("StandardMaterial3D_bnvod")
 font_weight = 425
 subpixel_positioning = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30ix5"]
-albedo_texture = ExtResource("3_l8q40")
-disable_receive_shadows = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvown"]
+albedo_texture = ExtResource("3_7yk3o")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j4u3p"]
 size = Vector2(16, 12)
-
-[sub_resource type="SystemFont" id="SystemFont_aqvki"]
-font_weight = 425
-subpixel_positioning = 0
 
 [node name="Node3D" type="Node3D"]
 
@@ -144,9 +139,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437607, 0.0336633, 0)
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Buton" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.634, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.634, -0.91099)
 script = SubResource("GDScript_vdphs")
-path = "res://StartSC.tscn"
+path = "res://scenes/start/StartSC2.tscn"
 
 [node name="BBack" type="MeshInstance3D" parent="Node3D/Buton"]
 transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
@@ -174,28 +169,9 @@ outline_size = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.145, -1)
-material_override = SubResource("StandardMaterial3D_30ix5")
+material_override = SubResource("StandardMaterial3D_cvown")
 mesh = SubResource("PlaneMesh_j4u3p")
 skeleton = NodePath("../..")
-
-[node name="ButtonText" type="Label3D" parent="Node3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, -0.0981953)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Tätä kurssia kehitetään alkuvaiheen
-terveysalan AMK-opiskelijoille. Kurssia
-tullaan käyttämään ennakkomateriaalina
-samasta aiheesta pidettävälle
-laboraatiotunille valmistautumiseen.
-
-Verkkokurssin kehitys tapahtuu osana 
-Metropolian MINNO-kurssia. 
-
-Palautekyselyn vastaukset ovat täysin
-anonyymejä.
-"
-font = SubResource("SystemFont_aqvki")
-font_size = 140
-outline_size = 0
 
 [connection signal="input_event" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_mouse_entered"]

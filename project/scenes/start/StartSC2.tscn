@@ -43,8 +43,9 @@ boundsy = 10
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Buton" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0883923, -6.88565, 1.48276)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0883923, -6.88565, 0.535454)
 script = ExtResource("3_p8kok")
+path = "res://scenes/MainSC1.tscn"
 
 [node name="BBack" type="MeshInstance3D" parent="Node3D/Buton"]
 transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
@@ -71,38 +72,24 @@ font_size = 150
 outline_size = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.05968, 0.364868)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.564723, 0, 1, -2.46849e-08, 0, 1.01051, 0.364868)
 material_override = SubResource("StandardMaterial3D_72npt")
 mesh = SubResource("PlaneMesh_ryucp")
 skeleton = NodePath("../..")
 
-[node name="ButtonText" type="Label3D" parent="Node3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0883923, 0.274541, 0.363197)
+[node name="ButtonText" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -4.73695e-15, 0, 4.73695e-15, 1, 0.0883923, 1.14909, 0.639409)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Olemme sisältäneet prototyyppiin kaksi
-lopullisen työn osiota:
+text = "Tulet ensin käymään läpi kaikki osiot
+ järjestyksessä. tämän 
+jälkeen pääset suorittamaan lopputestiä.
 
-\"Anatomia\" ja \"Nielemisen normaali
-fysiologia\"
-
-Olemme kuitenkin jättäneet kaikki
-valmiin työn sunnitellut otsikot tähän,
-jotta saat paremman kuvan valmiin työn
-sisällöstä.
-
-Kun olet lukenut kaikki osiot läpi, voit siirtyä 
-lopputestiin. Lopputestin ja materiaalin välillä
-voi liikkua vapaasti testin aloittamisen jälkeen.
-
-"
+Lopputestin ja materiaalin välillä
+voi kuitenkin liikkua vapaasti testin aloittamisen 
+jälkeenkin."
 font = SubResource("SystemFont_y10d5")
 font_size = 130
 outline_size = 0
-
-[node name="BBack2" type="MeshInstance3D" parent="Node3D/MeshInstance3D/ButtonText"]
-transform = Transform3D(6.81682, 0, 0, 0, -4.37114e-08, -1.20582, 0, 1, -5.27082e-08, -0.083725, 3.0958, -0.237253)
-mesh = SubResource("PlaneMesh_qnltl")
-skeleton = NodePath("../..")
 
 [connection signal="input_event" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_mouse_entered"]

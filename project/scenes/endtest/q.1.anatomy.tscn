@@ -48,10 +48,10 @@ boundsx = 25
 boundsy = 25
 
 [node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 13.4274, 13.7745, 1.23119)
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 12.3346, 13.7745, 1.23119)
 modulate = Color(0.977937, 0.977937, 0.977937, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Kysymys 1 / 2 
+text = "Kysymys 1 / 11
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 400

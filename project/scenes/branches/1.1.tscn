@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvxr8u8xy55gr"]
+[gd_scene load_steps=12 format=3 uid="uid://bvxr8u8xy55gr"]
 
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_ig3a6"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_af8md"]
 [ext_resource type="Material" uid="uid://dbym1rdjvsb5d" path="res://colours/backorange.tres" id="3_vedhk"]
 [ext_resource type="Texture2D" uid="uid://blro0uvx4blpl" path="res://assets/okay/Pallurat nielu.png" id="4_bbkj6"]
-[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://colours/Backbluer.tres" id="5_ump5k"]
 [ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="6_b2h6j"]
 [ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="7_kpdwy"]
 
@@ -25,10 +24,6 @@ disable_receive_shadows = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_54tsc"]
 material = ExtResource("3_vedhk")
-size = Vector2(20, 20)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
-material = ExtResource("5_ump5k")
 size = Vector2(20, 20)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
@@ -91,11 +86,6 @@ skeleton = NodePath("../../..")
 [node name="Sprite3D" type="Sprite3D" parent="Center2"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -0.60668, 0.838379, 0.606678)
 texture = ExtResource("4_bbkj6")
-
-[node name="Center3" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.70925, 0, 0, 0, -4.54773e-08, -1.56592, 0, 1.0404, -6.84489e-08, -0.222701, -2.0325, 0.431102)
-mesh = SubResource("PlaneMesh_xb7f6")
-skeleton = NodePath("../..")
 
 [node name="Center4" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.6547, 0, 0, 0, -4.54773e-08, -1.50379, 0, 1.0404, -6.57331e-08, -0.195031, -1.97102, 0.550837)
