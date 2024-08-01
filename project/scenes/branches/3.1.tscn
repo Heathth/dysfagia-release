@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://yaxx26dguai4"]
 
-[ext_resource type="Texture2D" uid="uid://bqm3yomaggm5g" path="res://assets/okay/normfys.png" id="1_cvaog"]
 [ext_resource type="Material" uid="uid://bqc1isugtyvbd" path="res://colours/backred.tres" id="2_672mk"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="3_b8lu4"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="4_fcey4"]
@@ -16,6 +15,9 @@ subpixel_positioning = 0
 base_font = SubResource("SystemFont_uded6")
 variation_embolden = 1.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6thfh"]
+albedo_color = Color(0.310853, 0.570049, 0.691726, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_lbwxy"]
 material = ExtResource("2_672mk")
 size = Vector2(10, 7)
@@ -29,68 +31,15 @@ size = Vector2(20, 20)
 [node name="Textkeep" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6727, 18.1603, 1.07446)
 
-[node name="Label3D3" type="Label3D" parent="Textkeep"]
-alpha_antialiasing_mode = 1
-alpha_antialiasing_edge = 0.71
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Ruoka hienonnetaan suussa hampailla ja se sekoittuu sylkeen muuttuen helpommin nieltäväksi. Kieli ja suun lihakset siirtelevät ruokaa ja muovaavat siitä helposti nieltävän massan eli boluksen. Tämä on tahdonalaista toimintaa. Ruuan siirtäminen suun takaosaan käynnistää nielemisen reflektiivisen vaiheen, kun ruoka koskettaa kielen kantaa ja takanielun seinämää. "
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "1. Oraalinen vaihe"
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D4" type="Label3D" parent="Textkeep"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.4306, 0)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Nielemisrefleksin aktivoiduttua pureskelu ja hengitys taukoavat. Ruokamassan kulkiessa kohti nielua pehmeä suulaki sulkee nenäportin ja samalla käynnistyy lihassupistusten aalto (peristaltiikka), joka kuljettaa ruokaa eteenpäin nielussa. Äänihuulet sulkeutuvat ja kurkunkansi kääntyy suojaamaan henkitorvea, jolloin ruokamassa ohjautuu ruokatorveen. Suussa käsitelty ruokaa kulkee nielun läpi 0,5–1,5 sekunnissa. "
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "2. Faryngeaalinen vaihe"
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
 [node name="Label3D5" type="Label3D" parent="Textkeep"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.8127, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1614, 3.29843, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Tapahtuu ruokatorvessa, jonka hieman hitaampi peristaltiikka kuljettaa ruokaa kohti mahaporttia. Esofageaalinen vaihe on kestoltaan noin 8-12 sekuntia ja nielemistapahtuma päättyy ruokamassan kulkeuduttua mahalaukkuun.  "
+text = "Nauttimalla useita pieniä aterioita päivässä ravinnon tarve tulee tyydytetyksi ja annoksen syöminen väsymättä mahdollistuu. Suupalojen tulee olla sopivan pieniä ja ruokailutahdin rauhallinen. Tarvittaessa voidaan syömisen apuna käyttää pienempää lusikkaa ja juomisen apuvälineitä. Eri ruokalajit pidetään erillään, jotta makujen maistaminen mahdollistuu. Ruoka-annoksen voi lämmittää uudelleen, mikäli se ehtii jäähtyä kesken ruokailun. Tiheä ruokailu rasittaa hampaistoa ja onkin huolehdittava hyvästä suuhygieniasta. 
+
+Vireystilalla on vaikutusta nielemisen sujumiseen. Etenkin väsyneenä on hyvä suosia helposti nieltäviä ruokia. Jokaiseen nielaisuun tulee keskittyä ja suun tulee tyhjentyä ennen seuraavaa suupalaa. Voimakkaat ruuan tuoksut nostavat vireystilaa, esimerkiksi curry, sitrus ja kahvi. Tuoksun ohella myös maut ja värit aktivoivat haju-, maku- ja näköaisteja. Ruokailijan aisteja voidaankin tukea asettamalla ruoka lähelle ja katseen alle pöydälle, vaikka ruoka syötettäisiinkin hänelle. Näin luodaan kokonaisvaltainen ruokailukokemus; tuoksu, värit ja maut. 
+
+Ruokailun jälkeen on hyvä olla pystyasennossa 15–30 minuuttia, jotta mahdollinen suuhun ja nieluun jäänyt ruoka ei valu henkitorveen. Tarkkaillaan henkilön äänen kirkkaus ja seurataan mahdollista yskimistä. Ruokailun jälkeen on hyvä puhdistaa hampaat / proteesit ja puhdistaa suun limakalvot kostutetulla sideharsotaitoksella ruokajäämistä. "
 font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
@@ -99,29 +48,11 @@ vertical_alignment = 0
 line_spacing = 30.0
 autowrap_mode = 3
 width = 5000.0
-
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 0)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "3. Esofageaalinen vaihe"
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Sprite3D" type="Sprite3D" parent="Textkeep"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1157, -30.0563, 0.373367)
-texture = ExtResource("1_cvaog")
 
 [node name="Label3D2" type="Label3D" parent="Textkeep"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -44.1839, -0.415314, 0.0753744)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nielun Anatomia
+text = "3.1 Hyvä ruokailu- ja syöttämistilanne 
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 230
@@ -132,7 +63,9 @@ horizontal_alignment = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.31048, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nieleminen on monimutkainen tapahtuma. Se on hienomotorista ja sensorista toimintaa, johon osallistuu useita kasvojen, kielen, kurkunpään ja nielun alueen lihasryhmiä sekä lihaksia. Nieleminen rytmittyy hengityksen kanssa; kun nieleminen käynnistyy, uloshengitys pysähtyy ja käynnistyy jälleen uloshengityksellä. Viisi eri aivohermoa koordinoi nielemistapahtumaa. Nieleminen on osittain tahdonalainen toiminto, osittain refleksi. Nielemisen vaiheet:  "
+text = "Ruokailun on hyvä tapahtua ryhdikkäässä ja tukevassa istuma-asennossa, hieman eteenpäin nojautuen.  Pään taivutus etuviistoon nielaisun aikana auttaa henkitorvea sulkeutumaan. Ruokailu tapahtuu mieluiten tuolilla pöydän ääressä. Vuodepotilas tuetaan mahdollisimman hyvään istuma-asentoon vuoteessa. Ruokailu ja juominen selinmakuulla ovat vaarallisia ja saattavat aiheuttaa ruuan kulkeutumista henkitorveen (kurkunpään sulku heikkenee).  
+
+Kiire ja häiriötekijät vaikeuttavat nielemistä ja lisäävät riskiä ruuan kulkeutumiselle henkitorveen. Ruokailutilanteen on oltava rauhallinen ja miellyttävä. Myös syöttäjän olo tulee tehdä mukavaksi, esim. istuma-asento, jotta tilanne pysyy kiireettömänä. Ruokailu on usein myös sosiaalinen tapahtuma, mutta varsinainen keskustelutilanne on hyvä pitää muulloin kuin ruokaillessa. Syöttäjän tulee olla läsnä, hän voi kertoa mitä kulloinenkin suupala sisältää ja etsii sopivan rytmin ruokailulle syötettävää tarkkailemalla ja kuuntelemalla. Ruoka suussa puhumista tulee välttää, etenkin jos nielemisen koordinointi on vaikeutunut. Mikäli henkilön ääni muuttuu vetiseksi tai kurlaavaksi kesken ruokailun, ohjataan häntä yskäisemään nielun selvittämiseksi niin että ääni jälleen kirkastuu. "
 font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
@@ -157,7 +90,8 @@ autowrap_mode = 3
 width = 5000.0
 
 [node name="Center" type="MeshInstance3D" parent="Textkeep/Label3D2"]
-transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 7.79772, 1.04712, -0.616836)
+transform = Transform3D(2.4202, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 11.3155, 1.04712, -0.616836)
+material_override = SubResource("StandardMaterial3D_6thfh")
 mesh = SubResource("PlaneMesh_lbwxy")
 skeleton = NodePath("../../../../..")
 

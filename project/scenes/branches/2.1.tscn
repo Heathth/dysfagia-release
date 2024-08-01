@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://bi8tccevqj6nq"]
 
-[ext_resource type="Texture2D" uid="uid://bqm3yomaggm5g" path="res://assets/okay/normfys.png" id="1_f1avr"]
 [ext_resource type="Material" uid="uid://bqc1isugtyvbd" path="res://colours/backred.tres" id="2_dvt3g"]
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="3_i4hao"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="4_ymtfw"]
@@ -16,6 +15,9 @@ subpixel_positioning = 0
 base_font = SubResource("SystemFont_uded6")
 variation_embolden = 1.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7el1y"]
+albedo_color = Color(0.575126, 0.779011, 0.432708, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_lbwxy"]
 material = ExtResource("2_dvt3g")
 size = Vector2(10, 7)
@@ -30,11 +32,25 @@ size = Vector2(20, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6727, 18.1603, 1.07446)
 
 [node name="Label3D3" type="Label3D" parent="Textkeep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63157, 1.20842, 0)
 alpha_antialiasing_mode = 1
 alpha_antialiasing_edge = 0.71
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Ruoka hienonnetaan suussa hampailla ja se sekoittuu sylkeen muuttuen helpommin nieltäväksi. Kieli ja suun lihakset siirtelevät ruokaa ja muovaavat siitä helposti nieltävän massan eli boluksen. Tämä on tahdonalaista toimintaa. Ruuan siirtäminen suun takaosaan käynnistää nielemisen reflektiivisen vaiheen, kun ruoka koskettaa kielen kantaa ja takanielun seinämää. "
+text = "- Ruuan käsittely suussa on vaikeaa ja nieleminen käynnistyy viiveellä. 
+- Ruuan pureskelu ja kielen liike voimatonta. 
+- Erityisesti ohuet nesteet valuvat herkästi henkitorveen. 
+- Ruokaa tai sylkeä valuu suupielestä. 	 
+- Ruokaa jää suuhun, nieluun tai poskiin ja saattaa sieltä valua myöhemmin henkitorveen. 
+- Ruokailu on huomattavasti hidastunut. 
+- Ruokaa kulkeutuu nenään. 
+- Tunne, että ruokaa menee väärään kurkkuun. 
+- Suun tyhjentämiseen tarvitaan useita nielaisuja. 
+- Yskiminen/kakominen ruokailun ja juomisen yhteydessä. 
+- Yskiminen heikkoa. 
+- Puheäänen muuttuminen kurlaavaksi tai vetiseksi ruokailun jälkeen. 
+- Ruokailusta kieltäytyminen ja pureskelua vaativan ruuan syömättä jättäminen. 
+- Toistuvat keuhkokuumeet. "
 font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
@@ -42,13 +58,13 @@ horizontal_alignment = 0
 vertical_alignment = 0
 line_spacing = 30.0
 autowrap_mode = 3
-width = 5000.0
+width = 7000.0
 
 [node name="Label3D3" type="Label3D" parent="Textkeep/Label3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.431583, 2.08064, 1.19209e-07)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "1. Oraalinen vaihe"
+text = "Nielemisvaikeuteen viittaavat seuraavat oireet: "
 font = SubResource("FontVariation_a3284")
 font_size = 180
 outline_size = 0
@@ -59,16 +75,21 @@ autowrap_mode = 3
 width = 5000.0
 
 [node name="Label3D4" type="Label3D" parent="Textkeep"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.4306, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2863, -24.9106, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nielemisrefleksin aktivoiduttua pureskelu ja hengitys taukoavat. Ruokamassan kulkiessa kohti nielua pehmeä suulaki sulkee nenäportin ja samalla käynnistyy lihassupistusten aalto (peristaltiikka), joka kuljettaa ruokaa eteenpäin nielussa. Äänihuulet sulkeutuvat ja kurkunkansi kääntyy suojaamaan henkitorvea, jolloin ruokamassa ohjautuu ruokatorveen. Suussa käsitelty ruokaa kulkee nielun läpi 0,5–1,5 sekunnissa. "
+text = "- Painon aleneminen, annoskoon pienentyessä 
+- Puutokset ruokavalion yksipuolistuessa 
+Keuhkokuume ja limaisuus aspiraation seurauksena 
+- Lääkehoidon puutteellinen toteutuminen (lääkityksen muuttaminen helpommin nieltäviksi!) 
+- Vaikutuksia sosiaalisiin suhteisiin, sosiaalisten ruokailutilanteiden estyessä 
+- Puhe- ja hengitysvaikeudet "
 font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
 horizontal_alignment = 0
 vertical_alignment = 0
-line_spacing = 30.0
+line_spacing = 50.0
 autowrap_mode = 3
 width = 5000.0
 
@@ -76,7 +97,8 @@ width = 5000.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "2. Faryngeaalinen vaihe"
+text = "Nielemisvaikeudesta mahdollisesti seuraavia asioita 
+"
 font = SubResource("FontVariation_a3284")
 font_size = 180
 outline_size = 0
@@ -85,43 +107,11 @@ vertical_alignment = 0
 line_spacing = 30.0
 autowrap_mode = 3
 width = 5000.0
-
-[node name="Label3D5" type="Label3D" parent="Textkeep"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.8127, 0)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Tapahtuu ruokatorvessa, jonka hieman hitaampi peristaltiikka kuljettaa ruokaa kohti mahaporttia. Esofageaalinen vaihe on kestoltaan noin 8-12 sekuntia ja nielemistapahtuma päättyy ruokamassan kulkeuduttua mahalaukkuun.  "
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 0)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "3. Esofageaalinen vaihe"
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Sprite3D" type="Sprite3D" parent="Textkeep"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1157, -30.0563, 0.373367)
-texture = ExtResource("1_f1avr")
 
 [node name="Label3D2" type="Label3D" parent="Textkeep"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -44.1839, -0.415314, 0.0753744)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nielun Anatomia
+text = "2.1 Nielemisvaikeus eli dysfagia 
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 230
@@ -129,25 +119,15 @@ outline_size = 0
 horizontal_alignment = 0
 
 [node name="Label3D3" type="Label3D" parent="Textkeep/Label3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.31048, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.91469, -2.38419e-07)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nieleminen on monimutkainen tapahtuma. Se on hienomotorista ja sensorista toimintaa, johon osallistuu useita kasvojen, kielen, kurkunpään ja nielun alueen lihasryhmiä sekä lihaksia. Nieleminen rytmittyy hengityksen kanssa; kun nieleminen käynnistyy, uloshengitys pysähtyy ja käynnistyy jälleen uloshengityksellä. Viisi eri aivohermoa koordinoi nielemistapahtumaa. Nieleminen on osittain tahdonalainen toiminto, osittain refleksi. Nielemisen vaiheet:  "
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
+text = "Nielemisvaikeudesta voidaan puhua, jos henkilöllä on vaikeuksia niellä sylkeä, ruokaa, juomaa tai lääkkeitä. Dysfagia liittyy usein sairauksiin, kuten aivoverenkiertohäiriöön (AVH), aivovammaan, eteneviin neurologisiin sairauksiin (Parkinsonin tauti, ALS, Huntingtonin tauti, Myasthenia gravis, MS-tauti, Alzheimerin tauti) sekä nielun ja suun alueen syöpiin.  
 
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D2/Label3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Nielemisvaikeus eli dysfagia  "
-font = SubResource("FontVariation_a3284")
+Nielemisvaikeudet voivat johtua suuontelon, nielun tai ruokatorven lihastoiminnan tai nielemisrefleksin häiriöistä. Suuontelon tuntohäiriöt vaikeuttavat ruuan käsittelyä samoin nielemisrefleksin heikentynyt toiminta. Nielemisrefleksin viivästyessä, etenkin juoma saattaa ohjautua herkästi henkitorveen (aspiraatio). 
+
+Ravitsemustilan heikkeneminen ja painon lasku sekä toistuvat keuhkokuumeet ovat vakavia nielemisvaikeuden seurauksia. Hiljaisessa aspiraatiossa yskänrefleksi ei laukea ja sairastunut itse ei huomaa ruuan tai juoman kulkeutuneen henkitorveen. Hiljainen aspiraatio tapahtuu erityisesti suun ja nielun alueen tuntopuutosten yhteydessä. "
+font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
 horizontal_alignment = 0
@@ -157,7 +137,8 @@ autowrap_mode = 3
 width = 5000.0
 
 [node name="Center" type="MeshInstance3D" parent="Textkeep/Label3D2"]
-transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 7.79772, 1.04712, -0.616836)
+transform = Transform3D(1.90922, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 9.03473, 1.04712, -0.616836)
+material_override = SubResource("StandardMaterial3D_7el1y")
 mesh = SubResource("PlaneMesh_lbwxy")
 skeleton = NodePath("../../../../..")
 

@@ -1,18 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvxr8u8xy55gr"]
+[gd_scene load_steps=15 format=3 uid="uid://bvxr8u8xy55gr"]
 
 [ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://scenes/control/world.tscn" id="1_ig3a6"]
 [ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://scenes/control/camera.tscn" id="2_af8md"]
 [ext_resource type="Material" uid="uid://dbym1rdjvsb5d" path="res://colours/backorange.tres" id="3_vedhk"]
 [ext_resource type="Texture2D" uid="uid://blro0uvx4blpl" path="res://assets/okay/Pallurat nielu.png" id="4_bbkj6"]
 [ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://colours/Backwhite.tres" id="6_b2h6j"]
+[ext_resource type="Material" uid="uid://bqc1isugtyvbd" path="res://colours/backred.tres" id="7_3mihq"]
 [ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://scenes/control/button3d_back.tscn" id="7_kpdwy"]
-
-[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
-subpixel_positioning = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_0flmx"]
-material = ExtResource("3_vedhk")
-size = Vector2(10, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lvgb"]
 disable_ambient_light = true
@@ -30,6 +24,19 @@ size = Vector2(20, 20)
 material = ExtResource("6_b2h6j")
 size = Vector2(20, 20)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnqpj"]
+albedo_color = Color(0.943459, 0.54991, 0.347265, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tsdoq"]
+material = ExtResource("7_3mihq")
+size = Vector2(10, 7)
+
+[sub_resource type="SystemFont" id="SystemFont_vwxkd"]
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_ulo4s"]
+subpixel_positioning = 0
+
 [node name="Node3D" type="Node3D"]
 
 [node name="World" parent="." instance=ExtResource("1_ig3a6")]
@@ -40,42 +47,6 @@ startzoom = -1.0
 startzoommod = 7.0
 boundsx = 25
 boundsy = 25
-
-[node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 6.63995, 7.43405, 1.86763)
-modulate = Color(0.0400292, 0.122496, 0.185641, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Nielun Anatomia
-"
-font = SubResource("SystemFont_ulo4s")
-font_size = 230
-outline_size = 0
-horizontal_alignment = 0
-
-[node name="Label3D3" type="Label3D" parent="Label3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.2777, 0)
-modulate = Color(0.0400292, 0.122496, 0.185641, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "1. HAMPAAT 
-2. KIELI 
-3. SUUONTELO 
-4. NENÄONTELO 
-5. PEHMEÄ SUULAKI 
-6. KURKUNKANSI 
-7. HENKITORVI 
-8. RUOKATORVI 
-9. ÄÄNIHUULET / KURKUNPÄÄ 
-"
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-line_spacing = 40.0
-
-[node name="Center" type="MeshInstance3D" parent="Label3D2"]
-transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 7.79772, 1.04712, -0.155532)
-mesh = SubResource("PlaneMesh_0flmx")
-skeleton = NodePath("../../../..")
 
 [node name="Center2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -9.74119, -1.15252, 0.687393)
@@ -95,3 +66,39 @@ skeleton = NodePath("../..")
 [node name="SCbutton" parent="." instance=ExtResource("7_kpdwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2271, -14.4837, 1.38499)
 pagenum = 1
+
+[node name="Center" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 13.9686, 8.34764, 1.61015)
+material_override = SubResource("StandardMaterial3D_qnqpj")
+mesh = SubResource("PlaneMesh_tsdoq")
+skeleton = NodePath("../../../../..")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 6.54856, 7.29016, 2.67511)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielun Anatomia
+"
+font = SubResource("SystemFont_vwxkd")
+font_size = 230
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, 6.63995, -2.84365, 1.86763)
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1. HAMPAAT 
+2. KIELI 
+3. SUUONTELO 
+4. NENÄONTELO 
+5. PEHMEÄ SUULAKI 
+6. KURKUNKANSI 
+7. HENKITORVI 
+8. RUOKATORVI 
+9. ÄÄNIHUULET / KURKUNPÄÄ 
+"
+font = SubResource("SystemFont_ulo4s")
+font_size = 180
+outline_size = 0
+horizontal_alignment = 0
+line_spacing = 40.0

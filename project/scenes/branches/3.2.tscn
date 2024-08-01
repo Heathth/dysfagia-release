@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cglv7s04p2mjj"]
+[gd_scene load_steps=13 format=3 uid="uid://c62qp3f1uit1d"]
 
 [ext_resource type="Texture2D" uid="uid://bqm3yomaggm5g" path="res://assets/okay/normfys.png" id="1_p4ulw"]
 [ext_resource type="Material" uid="uid://bqc1isugtyvbd" path="res://colours/backred.tres" id="2_631rc"]
@@ -16,7 +16,10 @@ subpixel_positioning = 0
 base_font = SubResource("SystemFont_uded6")
 variation_embolden = 1.0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lbwxy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0thht"]
+albedo_color = Color(0.310853, 0.570049, 0.691726, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p8fma"]
 material = ExtResource("2_631rc")
 size = Vector2(10, 7)
 
@@ -27,70 +30,19 @@ size = Vector2(20, 20)
 [node name="Node3D" type="Node3D"]
 
 [node name="Textkeep" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6727, 18.1603, 1.07446)
-
-[node name="Label3D3" type="Label3D" parent="Textkeep"]
-alpha_antialiasing_mode = 1
-alpha_antialiasing_edge = 0.71
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Ruoka hienonnetaan suussa hampailla ja se sekoittuu sylkeen muuttuen helpommin nieltäväksi. Kieli ja suun lihakset siirtelevät ruokaa ja muovaavat siitä helposti nieltävän massan eli boluksen. Tämä on tahdonalaista toimintaa. Ruuan siirtäminen suun takaosaan käynnistää nielemisen reflektiivisen vaiheen, kun ruoka koskettaa kielen kantaa ja takanielun seinämää. "
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "1. Oraalinen vaihe"
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D4" type="Label3D" parent="Textkeep"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.4306, 0)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Nielemisrefleksin aktivoiduttua pureskelu ja hengitys taukoavat. Ruokamassan kulkiessa kohti nielua pehmeä suulaki sulkee nenäportin ja samalla käynnistyy lihassupistusten aalto (peristaltiikka), joka kuljettaa ruokaa eteenpäin nielussa. Äänihuulet sulkeutuvat ja kurkunkansi kääntyy suojaamaan henkitorvea, jolloin ruokamassa ohjautuu ruokatorveen. Suussa käsitelty ruokaa kulkee nielun läpi 0,5–1,5 sekunnissa. "
-font = SubResource("SystemFont_ulo4s")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "2. Faryngeaalinen vaihe"
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6796, 12.8847, 1.07446)
 
 [node name="Label3D5" type="Label3D" parent="Textkeep"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.8127, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3298, 3.04738, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Tapahtuu ruokatorvessa, jonka hieman hitaampi peristaltiikka kuljettaa ruokaa kohti mahaporttia. Esofageaalinen vaihe on kestoltaan noin 8-12 sekuntia ja nielemistapahtuma päättyy ruokamassan kulkeuduttua mahalaukkuun.  "
+text = "Hitaasti käynnistyvän nielemisen helpottamiseksi voi ottaa kulauksen jäävettä ruokailun alussa ja välillä refleksien herättelemiseksi, tämä on erityisen hyödyllistä esim. Parkinsonin taudissa. 
+
+Ennen ruokailua voidaan tuntopalautteella herätellä kasvojen, kielen ja nielun lihaksia, koskettelemalla. Suun limakalvot ja kieli voidaan puhdistaa ja kostuttaa kostealla harsotaitoksella ja tekohampaat voidaan huuhdella vedellä. Samalla syljen eritys käynnistyy mikä auttaa kuivasta suusta kärsiviä ruuan käsittelyssä ja nielemisessä. Syljen määrää voidaan lisätä myös ennen ruokailua käytettävillä keinosylkivalmisteilla. 
+
+Hyvä syömisasento on aina tärkeää, mieluiten istuma-asento pöydän ääressä. Mikäli syöminen tapahtuu sängyssä, nostetaan pääty täysin pystyyn ja tuetaan päätä tyynyllä niin, että leukalinja pysyy hieman alaviistossa. Syöttäjä istuu samalla korkeudella ruokailijan kanssa. 
+
+Huomioi kuitenkin, että nielemisvaikeuden ollessa vaikea, kompensaatiokeinot eivät välttämättä auta. "
 font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
@@ -101,10 +53,10 @@ autowrap_mode = 3
 width = 5000.0
 
 [node name="Label3D3" type="Label3D" parent="Textkeep/Label3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7044, 0.418373, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "3. Esofageaalinen vaihe"
+text = "Esimerkkikuvia apuvälineista :"
 font = SubResource("FontVariation_a3284")
 font_size = 180
 outline_size = 0
@@ -116,12 +68,14 @@ width = 5000.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Textkeep"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1157, -30.0563, 0.373367)
+visible = false
 texture = ExtResource("1_p4ulw")
 
 [node name="Label3D2" type="Label3D" parent="Textkeep"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -44.1839, -0.415314, 0.0753744)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nielun Anatomia
+text = "3.2 Yleisimpiä nielemistä helpottavia keinoja
+
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 230
@@ -132,7 +86,10 @@ horizontal_alignment = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.31048, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nieleminen on monimutkainen tapahtuma. Se on hienomotorista ja sensorista toimintaa, johon osallistuu useita kasvojen, kielen, kurkunpään ja nielun alueen lihasryhmiä sekä lihaksia. Nieleminen rytmittyy hengityksen kanssa; kun nieleminen käynnistyy, uloshengitys pysähtyy ja käynnistyy jälleen uloshengityksellä. Viisi eri aivohermoa koordinoi nielemistapahtumaa. Nieleminen on osittain tahdonalainen toiminto, osittain refleksi. Nielemisen vaiheet:  "
+text = "Ruoan ja juoman koostumuksen muokkaaminen on tärkeää nielemisen helpottamiseksi. Heikon pureskelun ja oraalisen siirron ollessa kyseessä suositaan pehmeää tai sosemaista ruokaa. Huulisulun heikkoudesta ja suupielestä vuotamisesta kärsiville suositellaan paksumpia nesteitä sekä lovimukien tai nokkamukien käyttöä. Ruoan asettaminen vasemmalle puolelle voi myös auttaa. Yleisessä käytössä syöttämisen apuvälineenä ovat nokkamukit, joita ei ensisijaisesti suositella nielemisvaikeuksista kärsiville lisääntyneen aspiraatioriskin vuoksi. Nokkamukista juodessa pää kallistuu taakse päin, mikä vaikeuttaa nielemistä ja neste ohjautuu herkästi henkitorveen. 
+
+Toispuoleisen nielun heikkouden tapauksessa pään kallistus vahvalle puolelle tai kierto heikolle puolelle auttaa massan ohjautumista nielun toimivalle puolelle.  
+"
 font = SubResource("SystemFont_ulo4s")
 font_size = 180
 outline_size = 0
@@ -157,8 +114,9 @@ autowrap_mode = 3
 width = 5000.0
 
 [node name="Center" type="MeshInstance3D" parent="Textkeep/Label3D2"]
-transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 7.79772, 1.04712, -0.616836)
-mesh = SubResource("PlaneMesh_lbwxy")
+transform = Transform3D(2.8317, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 12.5029, 1.32113, -0.616836)
+material_override = SubResource("StandardMaterial3D_0thht")
+mesh = SubResource("PlaneMesh_p8fma")
 skeleton = NodePath("../../../../..")
 
 [node name="World" parent="." instance=ExtResource("3_cv6qk")]
@@ -170,10 +128,10 @@ boundsx = 25
 boundsy = 25
 
 [node name="Center4" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.80812, 0, 0, 0, -4.54773e-08, -2.4094, 0, 1.0404, -1.05319e-07, 0, 0, 0)
+transform = Transform3D(6.25577, 0, 0, 0, -4.54773e-08, -1.82939, 0, 1.0404, -7.99659e-08, 0, 0, 0)
 mesh = SubResource("PlaneMesh_k6lre")
 skeleton = NodePath("../..")
 
 [node name="SCbutton" parent="." instance=ExtResource("6_86kgq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.322, -21.2524, 1.38499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5535, -15.5372, 1.38499)
 pagenum = 2

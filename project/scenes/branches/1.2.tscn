@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://de13ro6y0su3a"]
+[gd_scene load_steps=13 format=3 uid="uid://de13ro6y0su3a"]
 
 [ext_resource type="Texture2D" uid="uid://bqm3yomaggm5g" path="res://assets/okay/normfys.png" id="1_2twol"]
 [ext_resource type="Material" uid="uid://bqc1isugtyvbd" path="res://colours/backred.tres" id="2_1j50o"]
@@ -16,7 +16,10 @@ subpixel_positioning = 0
 base_font = SubResource("SystemFont_uded6")
 variation_embolden = 1.0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lbwxy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25078"]
+albedo_color = Color(0.943459, 0.54991, 0.347265, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1x1fb"]
 material = ExtResource("2_1j50o")
 size = Vector2(10, 7)
 
@@ -121,7 +124,7 @@ texture = ExtResource("1_2twol")
 [node name="Label3D2" type="Label3D" parent="Textkeep"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.9475e-08, 0, 2.9475e-08, 1, -44.1839, -0.415314, 0.0753744)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Nielun Anatomia
+text = "Nielemisprosessi
 "
 font = SubResource("SystemFont_ulo4s")
 font_size = 230
@@ -129,7 +132,7 @@ outline_size = 0
 horizontal_alignment = 0
 
 [node name="Label3D3" type="Label3D" parent="Textkeep/Label3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.31048, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.83162, 0)
 modulate = Color(0.0808931, 0.197996, 0.287743, 1)
 outline_modulate = Color(0, 0, 0, 0)
 text = "Nieleminen on monimutkainen tapahtuma. Se on hienomotorista ja sensorista toimintaa, johon osallistuu useita kasvojen, kielen, kurkunpään ja nielun alueen lihasryhmiä sekä lihaksia. Nieleminen rytmittyy hengityksen kanssa; kun nieleminen käynnistyy, uloshengitys pysähtyy ja käynnistyy jälleen uloshengityksellä. Viisi eri aivohermoa koordinoi nielemistapahtumaa. Nieleminen on osittain tahdonalainen toiminto, osittain refleksi. Nielemisen vaiheet:  "
@@ -142,23 +145,10 @@ line_spacing = 30.0
 autowrap_mode = 3
 width = 5000.0
 
-[node name="Label3D3" type="Label3D" parent="Textkeep/Label3D2/Label3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08064, 1.19209e-07)
-modulate = Color(0.0808931, 0.197996, 0.287743, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Nielemisvaikeus eli dysfagia  "
-font = SubResource("FontVariation_a3284")
-font_size = 180
-outline_size = 0
-horizontal_alignment = 0
-vertical_alignment = 0
-line_spacing = 30.0
-autowrap_mode = 3
-width = 5000.0
-
-[node name="Center" type="MeshInstance3D" parent="Textkeep/Label3D2"]
-transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 7.79772, 1.04712, -0.616836)
-mesh = SubResource("PlaneMesh_lbwxy")
+[node name="Center" type="MeshInstance3D" parent="Textkeep/Label3D2/Label3D3"]
+transform = Transform3D(1.72304, 0, 0, 0, -1.42364e-08, -0.653366, 0, 1, -9.30164e-09, 8.25441, 4.71838, -0.616836)
+material_override = SubResource("StandardMaterial3D_25078")
+mesh = SubResource("PlaneMesh_1x1fb")
 skeleton = NodePath("../../../../..")
 
 [node name="World" parent="." instance=ExtResource("3_h268t")]
