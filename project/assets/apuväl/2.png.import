@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl7pbwbkyxs8g"
-path.s3tc="res://.godot/imported/ruokapyram.png-5dcb7b0332b8329a76f1565be7228cef.s3tc.ctex"
+uid="uid://c4yegmp2lu50s"
+path.s3tc="res://.godot/imported/2.png-052ea9f6fceb47ee7a578b22b6e1c0fb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/okay/ruokapyram.png"
-dest_files=["res://.godot/imported/ruokapyram.png-5dcb7b0332b8329a76f1565be7228cef.s3tc.ctex"]
+source_file="res://assets/apuväl/2.png"
+dest_files=["res://.godot/imported/2.png-052ea9f6fceb47ee7a578b22b6e1c0fb.s3tc.ctex"]
 
 [params]
 
